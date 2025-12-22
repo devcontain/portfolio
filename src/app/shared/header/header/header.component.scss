@@ -57,7 +57,7 @@ section {
 
 .background {
     @include display(flex, center, center, row);
-    @include position(null, 1, 28px, 76px);
+    @include position(null, 1, 29px, 76px);
     border: 1px solid $c-accent;
     border-radius: 22px;
 

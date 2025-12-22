@@ -54,7 +54,7 @@ export class Language {
 
         abouta: 'Who I Am',
         aboutb: 'About me',
-        aboutc: 'My name is Sebastian, I have always been involved in IT and work in a solution-oriented way, because I am passionate about solving complex tasks and creating new applications. I find inspiration in innovative projects and in continuously developing myself.',
+        aboutc: 'My name is Sebastian. I am technically adept and take a consistently solution-oriented approach – complex challenges and well-designed applications motivate me. Modern technologies and the opportunity for continuous development are what drive me.',
         aboutd: 'Flexible in terms of working environments, I can work effectivley both on-site remotely.',
         aboute: 'I am open-minded and always looking for personal challanges to constantly improve my knowledge and skills.',
         aboutf: 'In my profession, programming isn\'t just about writing code it\'s creative form of problem-solving. I take pride in my ability to distill complex technical challanges into simple, user-friendly solutions. This way, I help you achieve your goals and bring your visions to life.',
@@ -96,18 +96,18 @@ export class Language {
 
         abouta: 'Wer ich bin',
         aboutb: 'Ueber mich',
-        aboutc: 'Mein Name ist Sebastian, ich bin schon immer in der IT unterwegs und arbeite lösungsorientiert, weil mich das Lösen komplexer Aufgaben und das Erschaffen neuer Anwendungen begeistert. Inspiration finde ich in innovativen Projekten und darin, mich stetig weiterzuentwickeln.',
+        aboutc: 'Mein Name ist Sebastian, ich bin technisch versiert und arbeite konsequent lösungsorientiert – komplexe Aufgaben und gut durchdachte Anwendungen motivieren mich. Moderne Technologien und die Möglichkeit, mich kontinuierlich weiterzuentwickeln, treiben mich an.',
         aboutd: 'Ich bin flexibel, was die Arbeitsumgebung angeht, und kann sowohl vor Ort als auch aus der Ferne effektiv arbeiten.',
-        aboute: 'Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um meine Kenntnisse und Fähigkeiten Fähigkeiten.',
-        aboutf: 'In meinem Beruf geht es beim Programmieren nicht nur um Code zu schreiben; es ist eine kreative Form des Problemlösens. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen zu verwandeln. Auf diese Weise helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken.',
+        aboute: 'Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um meine Kenntnisse und Fähigkeiten weiterzuentwickeln.',
+        aboutf: 'In meinem Beruf geht es beim Programmieren nicht nur darum Code zu schreiben; es ist eine kreative Form des Problemlösens. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen zu verwandeln. Auf diese Weise helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken.',
 
         skillsa: 'Technologien',
         skillsb: 'Skills',
-        skillsc: 'Auf meinem Weg habe ich an verschiedenen Projekten gearbeitet, einer Reihe von Frontend-Technologien und Konzepten Konzepte. Ich bin offen für die Einführung neuer Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu verbessern und in der sich ständig weiterentwickelnden Landschaft der Web entwicklung.',
+        skillsc: 'Auf meinem bisherigen Weg habe ich an vielfältigen Projekten gearbeitet und dabei ein breites Spektrum an Frontend-Technologien und -Konzepten eingesetzt. Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu erweitern und in der sich ständig weiterentwickelnden Welt der Webentwicklung stets einen Schritt voraus zu sein.',
         skillsd: 'Sie brauchen',
         skillse: 'einen Skill',
         skillsf: 'Nehmen Sie Kontakt mit mir auf. Ich freue mich darauf mein bisheriges Wissen zu erweitern',
-        skillsbutton: 'Lassen Sie reden',
+        skillsbutton: 'Kontakt',
 
         projectsa: 'Projekte',
         projectsb: 'Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen.',
@@ -125,15 +125,15 @@ export class Language {
     };
 
     public retxtenglish = [
-        { text: "Sebastian keeps calm under stress and always finds a solution.", name: "Anna, Project Manager" },
-        { text: "He gladly shares his knowledge and helps new colleagues settle in.", name: "Markus, Developer" },
-        { text: "He thinks solution-oriented and brings ideas that move us forward.", name: "Laura, Team Lead" }
+        { text: "Sebastian keeps calm under stress and always finds a solution.", name: "Burkhard, Mechatroniker" },
+        { text: "He gladly shares his knowledge and helps new colleagues settle in.", name: "Tobias, Office worker" },
+        { text: "He thinks solution-oriented and brings ideas that move us forward.", name: "Nicol, Team Lead" }
     ];
 
     public retxtgerman = [
-        { text: "Sebastian bleibt auch im Stress ruhig und findet immer Lösungen.", name: "Anna, Projektmanagerin" },
-        { text: "Er teilt sein Wissen gern und hilft neuen Kollegen beim Einstieg.", name: "Markus, Entwickler" },
-        { text: "Er denkt lösungsorientiert und bringt Ideen, die uns weiterbringen.", name: "Laura, Teamleiterin" }
+        { text: "Sebastian bleibt auch unter Stress ruhig und findet immer Lösungen.", name: "Burkhard, Mechatroniker" },
+        { text: "Er teilt sein Wissen gern und hilft neuen Kollegen beim Einstieg.", name: "Tobias, Sachbearbeiter" },
+        { text: "Er denkt lösungsorientiert und bringt Ideen, die uns weiterbringen.", name: "Nicol, Teamleiterin" }
     ];
 
     public contacttxtenglish = {
@@ -177,11 +177,11 @@ export class Language {
         mynameis: 'Dein Name kommt hier hin',
         missingname: 'Ups! Ihr Name scheint zu fehlen',
         email: 'Wie lautet Ihre E-Mail?',
-        mymailis: 'deinemail@email.de',
+        mymailis: 'ihremail@email.de',
         missingmail: 'Hoppla! Ihre E-Mail ist erforderlich',
         message: 'Wie kann ich Ihnen helfen?',
         mymassageis: 'Hallo Sebastian, ich bin interessiert an ...',
-        missingmassage: 'Was müssen Sie entwickeln?',
+        missingmassage: 'Was soll Programmiert werden?',
 
         policytxtbefore: 'Ich habe die',
         policyicealink: 'Datenschutzbestimmungen',
@@ -261,7 +261,7 @@ export class Language {
         s5Country: 'Deutschland',
         s5PhoneLabel: 'Telefon:',
         s5Phone: '0173-4540375',
-        s5Email: 'contact&#64;devcontain.de',
+        s5Email: 'contact@devcontain.de',
         s5ControllerText: 'Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.',
 
         s6Subtitle: 'Speicherdauer',
@@ -398,7 +398,7 @@ export class Language {
         phoneLabel: 'Telefon:',
         phone: '0173-4540375',
         emailLabel: 'E-Mail:',
-        emailText: 'contact&#64;devcontain.de',
+        emailText: 'contact@devcontain.de',
 
         disclaimerLabel: 'Haftungsausschluss:',
         contentTitle: 'Haftung für Inhalte',
