@@ -87,6 +87,38 @@ section {
                         @include display(flex, center, center, row);
                         gap: 4px;
                     }
+
+                    .project-status {
+                        @include display(flex, center, center, row);
+
+                        .status-icon {
+                            display: block;
+                            margin-inline: 6px;
+                            flex-shrink: 0;
+                            border-radius: 50%;
+
+                            &.working {
+                                width: 10px;
+                                height: 10px;
+                                background-color: $c-accent;
+                                box-shadow: 0 0 0 0 rgba(112, 224, 0, 0.5);
+                                animation: pulse 1.75s infinite;
+                            }
+
+                            &.planned {
+                                width: 8px;
+                                height: 8px;
+                                border: 2px solid $c-accent;
+                                background-color: transparent;
+                            }
+
+                            &.status-check {
+                                color: $c-accent;
+                                font-size: 16px;
+                                font-weight: 600;
+                            }
+                        }
+                    }
                 }
 
                 &:hover {
@@ -107,7 +139,7 @@ section {
 }
 
 .short-line {
-    @include position(null, null, 20px, 1px);
+    @include position(null, null, 25px, 1px);
     background-color: $c-accent;
 }
 
@@ -158,6 +190,29 @@ img.back {
     pointer-events: auto;
     display: block;
     height: 100%;
+}
+
+/*     .working .status-icon {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #70e000;
+        box-shadow: 0 0 0 0 rgba(112, 224, 0, 0.5);
+        animation: pulse 1.75s infinite;
+    } */
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(112, 224, 0, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 8px rgba(112, 224, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(112, 224, 0, 0);
+    }
 }
 
 @keyframes previewFadeIn {

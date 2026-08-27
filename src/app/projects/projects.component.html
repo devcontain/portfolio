@@ -1,10 +1,14 @@
 <div class="background-color">
     <section id="projects">
-        <div>  
+        <div>
             <div class="portfolio-header">
                 <h2>Portfolio</h2>
                 <h1>{{ languageService.currentHeader.projectsa }}</h1>
                 <span>{{ languageService.currentHeader.projectsb }}</span>
+                <div class="project-status">
+                    <span class="status-icon working"></span>
+                    <span>Hier muss ich noch den Live Button kurz beschreiben und das in die language . ts einfügen</span>
+                </div>
             </div>
             <div class="projects">
                 <div class="longe-line"></div>
@@ -19,13 +23,26 @@
                             }
                         </div>
                         <div>
-                            <span>Angular</span>
+                            <div class="project-status">
+                                <span class="status-icon status-check">✓</span>
+                                <span>Angular</span>
+                            </div>
                             <div class="short-line"></div>
-                            <span>TypeScript</span>
+                            <div class="project-status">
+                                <span class="status-icon status-check">✓</span>
+                                <span>TypeScript</span>
+                            </div>
                             <div class="short-line"></div>
-                            <span>HTML</span>
+                            <div class="project-status">
+                                <span class="status-icon status-check">✓</span>
+                                <span>HTML</span>
+                            </div>
                             <div class="short-line"></div>
-                            <span>CSS</span>
+                            <div class="project-status">
+                                <span class="status-icon status-check">✓</span>
+                                <span>CSS</span>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -42,35 +59,89 @@
                             }
                         </div>
                         <div>
-                            <span>HTML</span>
+                            <div class="project-status">
+                                <span class="status-icon status-check">✓</span>
+                                <span>HTML</span>
+                            </div>
                             <div class="short-line"></div>
-                            <span>CSS</span>
+                            <div class="project-status">
+                                <span class="status-icon status-check">✓</span>
+                                <span>CSS</span>
+                            </div>
                             <div class="short-line"></div>
-                            <span>JavaScript</span>
+                            <div class="project-status">
+                                <span class="status-icon status-check">✓</span>
+                                <span>JavaScript</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-<!--                 <div class="longe-line"></div>
+                <div class="longe-line"></div>
 
-                <div (click)="choosenProject('DaBubble')" class="single-project"
-                    (mouseenter)="mouseEnter('preDaBubble')" (mouseleave)="mouseLeave('leaveDaBubble')">
+                <div (click)="choosenProject('Devnext')" class="single-project" (mouseenter)="mouseEnter('preDevnext')"
+                    (mouseleave)="mouseLeave('leaveDevnext')">
                     <div class="place-single-project">
                         <div>
-                            <h3>Da Bubble</h3>
-                            @if (this.carts.hoverDaBubble === true) {
+                            <h3>Devnext</h3>
+                            @if (this.carts.hoverDevnext === true) {
                             <img class="project-pre-image" [src]="arrowOutward">
                             }
                         </div>
                         <div>
-                            <span>Angular</span>
+                            <div class="project-status">
+                                <span class="status-icon status-check">✓</span>
+                                <span>Docker</span>
+                            </div>
                             <div class="short-line"></div>
-                            <span>Firebase</span>
+                            <div class="project-status">
+                                <span class="status-icon status-check">✓</span>
+                                <span>CI/CD</span>
+                            </div>
                             <div class="short-line"></div>
-                            <span>TypeScript</span>
+                            <div class="project-status">
+                                <span class="status-icon status-check">✓</span>
+                                <span>Server</span>
+                            </div>
+                            <div class="short-line"></div>
+                            <div class="project-status">
+                                <span class="status-icon status-check">✓</span>
+                                <span>Security</span>
+                            </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
+
+                <div class="longe-line"></div>
+
+                <div (click)="choosenProject('Glueck')" class="single-project" (mouseenter)="mouseEnter('preGlueck')"
+                    (mouseleave)="mouseLeave('leaveGlueck')">
+                    <div class="place-single-project">
+                        <div>
+                            <h3>Glück-Selbermachen</h3>
+                            @if (this.carts.hoverGlueck === true) {
+                            <img class="project-pre-image" [src]="arrowOutward">
+                            }
+                        </div>
+                        <div>
+                            <div class="project-status">
+                                <span class="status-icon status-check">✓</span>
+                                <span>Angular</span>
+                            </div>
+
+                            <div class="short-line"></div>
+                            <div class="project-status">
+                                <span class="status-icon status-check">✓</span>
+                                <span>TypeScript</span>
+                            </div>
+                            <div class="short-line"></div>
+                            <div class="project-status">
+                                <span class="status-icon working"></span>
+                                <span>Live Website</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -87,12 +158,17 @@
                     <img class="pre" [src]="polloLocoPreview">
                     <img class="back" [src]="singleProjectBackground">
                 </div>
-                } <!-- @else if (this.carts.hoverDaBubble === true) {
+                } @else if (this.carts.hoverDevnext === true) {
                 <div class="set-background back-distance-top">
-                    <img class="pre" [src]="daBubblePreview">
+                    <img class="pre" [src]="devnextPreview">
                     <img class="back" [src]="singleProjectBackground">
                 </div>
-                } -->
+                } @else if (this.carts.hoverGlueck === true) {
+                <div class="set-background back-distance-top">
+                    <img class="pre" [src]="glueckPreview">
+                    <img class="back" [src]="singleProjectBackground">
+                </div>
+                }
             </div>
         </div>
     </section>

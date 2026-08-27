@@ -8,7 +8,7 @@
         } @else if (this.carts.setElPolloLoco === true) {
         <h4>{{ languageService.loco.cardnumber }}</h4>
         <h1>{{ languageService.loco.headercard }}</h1>
-        } @else if (this.carts.setDaBubble === true) {
+        } @else if (this.carts.setDevnext === true) {
         <h4>{{ languageService.bubble.cardnumber }}</h4>
         <h1>{{ languageService.bubble.headercard }}</h1>
         }
@@ -20,7 +20,7 @@
       <span>{{ languageService.join.descriptcard }}</span>
       } @else if (this.carts.setElPolloLoco === true) {
       <span>{{ languageService.loco.descriptcard }}</span>
-      } @else if (this.carts.setDaBubble === true) {
+      } @else if (this.carts.setDevnext === true) {
       <span>{{ languageService.loco.descriptcard }}</span>
       }
 
@@ -55,7 +55,7 @@
           <img [src]="img.javaScriptCart" alt="JavaScript">
           <span class="cart-font-icon">JavaScript</span>
         </div>
-        } @else if (this.carts.setDaBubble === true) {
+        } @else if (this.carts.setDevnext === true) {
         <div>
           <img [src]="img.angularCart" alt="Angular">
           <span class="cart-font-icon">Angular</span>
@@ -97,7 +97,7 @@
           <img class="cart-preview" [src]="img.joinPreviewCart" alt="Preview">
           } @else if (this.carts.setElPolloLoco === true) {
           <img class="cart-preview" [src]="img.polloPreviewCart" alt="Preview">
-          } @else if (this.carts.setDaBubble === true) {
+          } @else if (this.carts.setDevnext === true) {
           <img class="cart-preview" [src]="img.bubblePreviewCart" alt="Preview">
           }
         </div>

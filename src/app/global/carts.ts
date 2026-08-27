@@ -10,15 +10,18 @@ export class Carts {
 
     public hoverJoin = false;
     public hoverElPollo = false;
-    public hoverDaBubble = false;
+    public hoverDevnext = false;
+    public hoverGlueck = false;
 
     public setJoin = false;
     public setElPolloLoco = false;
-    public setDaBubble = false;
+    public setDevnext = false;
+    public setGlueck = false;
 
     public join: string = '';
     public elpolloloco: string = '';
-    public dabubble: string = '';
+    public devnext: string = '';
+    public glueck: string = '';
 
     /**
      * Toggle modal visibility flag
@@ -33,6 +36,7 @@ export class Carts {
     setFalse(): void {
         this.setJoin = false;
         this.setElPolloLoco = false;
-        this.setDaBubble = false;
+        this.setDevnext = false;
+        this.setGlueck = false;
     }
 }

@@ -17,7 +17,8 @@ export class ProjectsComponent implements OnInit {
 
   joinPreview = '../../assets/img/joinPreview.png';
   polloLocoPreview = '../../assets/img/pollo-locoPreview.png';
-  daBubblePreview = '../../assets/img/racoon_CSM.png';
+  devnextPreview = '../../assets/img/racoon_CSM.png';
+  glueckPreview = '../../assets/img/joinPreview.png'
 
   singleProjectBackground = '../../assets/img/single-project-back-ground.png';
 
@@ -39,7 +40,8 @@ export class ProjectsComponent implements OnInit {
   mouseEnter(enterproject: string) {
     this.carts.hoverJoin = enterproject === 'preJoin' ? true : this.carts.hoverJoin;
     this.carts.hoverElPollo = enterproject === 'preElPollo' ? true : this.carts.hoverElPollo;
-    this.carts.hoverDaBubble = enterproject === 'preDaBubble' ? true : this.carts.hoverDaBubble;
+    this.carts.hoverDevnext = enterproject === 'preDevnext' ? true : this.carts.hoverDevnext;
+    this.carts.hoverGlueck = enterproject === 'preGlueck' ? true : this.carts.hoverGlueck;
   }
 
   /**
@@ -49,7 +51,8 @@ export class ProjectsComponent implements OnInit {
   mouseLeave(leaveproject: string) {
     this.carts.hoverJoin = leaveproject === 'leaveJoin' ? false : this.carts.hoverJoin;
     this.carts.hoverElPollo = leaveproject === 'leaveElPollo' ? false : this.carts.hoverElPollo;
-    this.carts.hoverDaBubble = leaveproject === 'leaveDaBubble' ? false : this.carts.hoverDaBubble;
+    this.carts.hoverDevnext = leaveproject === 'leaveDevnext' ? false : this.carts.hoverDevnext;
+    this.carts.hoverGlueck = leaveproject === 'leaveGlueck' ? false : this.carts.hoverGlueck;
   }
 
   /**
@@ -71,6 +74,7 @@ export class ProjectsComponent implements OnInit {
   getSingleProject(ele: string) {
     return ele === 'Join' ? this.carts.setJoin = true :
       ele === 'ElPolloLoco' ? this.carts.setElPolloLoco = true :
-        ele === 'DaBubble' ? this.carts.setDaBubble = true : null;
+        ele === 'Devnext' ? this.carts.setDevnext = true :
+          ele === 'Glueck' ? this.carts.setGlueck = true : null;
   }
 }

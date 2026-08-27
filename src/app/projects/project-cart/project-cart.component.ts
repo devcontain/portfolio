@@ -3,7 +3,7 @@ import { Carts } from '../../global/carts';
 import { Language } from '../../global/language';
 import { Router } from '@angular/router';
 
-type CartKey = 'setJoin' | 'setElPolloLoco' | 'setDaBubble';
+type CartKey = 'setJoin' | 'setElPolloLoco' | 'setDevnext';
 type LinkKind = 'github' | 'live';
 
 @Component({
@@ -54,7 +54,7 @@ export class ProjectCartComponent implements OnInit {
       github: 'https://github.com/beekeepaz/El-pollo-loco',
       live: 'https://devcontain.de/elpollo/'
     },
-    setDaBubble: {
+    setDevnext: {
       github: 'https://github.com/beekeepaz/da-bubble',
       live: 'https://deine-domain.de/da-bubble/'
     }
@@ -200,7 +200,7 @@ export class ProjectCartComponent implements OnInit {
   private syncIndexFromFlags(): void {
     if (this.carts.setElPolloLoco) {
       this.currentIndex = 1;
-    } else if (this.carts.setDaBubble) {
+    } else if (this.carts.setDevnext) {
       this.currentIndex = 2;
     } else {
       this.currentIndex = 0;
@@ -214,6 +214,6 @@ export class ProjectCartComponent implements OnInit {
   private applyFlagsFromIndex(): void {
     this.carts.setJoin = this.currentIndex === 0;
     this.carts.setElPolloLoco = this.currentIndex === 1;
-    this.carts.setDaBubble = this.currentIndex === 2;
+    this.carts.setDevnext = this.currentIndex === 2;
   }
 }
