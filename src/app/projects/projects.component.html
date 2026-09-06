@@ -7,7 +7,8 @@
                 <span>{{ languageService.currentHeader.projectsb }}</span>
                 <div class="project-status">
                     <span class="status-icon working"></span>
-                    <span>Hier muss ich noch den Live Button kurz beschreiben und das in die language . ts einfügen</span>
+                    <span>Hier muss ich noch den Live Button kurz beschreiben und das in die language . ts
+                        einfügen</span>
                 </div>
             </div>
             <div class="projects">
@@ -24,25 +25,24 @@
                         </div>
                         <div>
                             <div class="project-status">
-                                <span class="status-icon status-check">✓</span>
-                                <span>Angular</span>
-                            </div>
-                            <div class="short-line"></div>
-                            <div class="project-status">
-                                <span class="status-icon status-check">✓</span>
-                                <span>TypeScript</span>
-                            </div>
-                            <div class="short-line"></div>
-                            <div class="project-status">
-                                <span class="status-icon status-check">✓</span>
+                                <span class="status-icon check">✓</span>
                                 <span>HTML</span>
                             </div>
                             <div class="short-line"></div>
                             <div class="project-status">
-                                <span class="status-icon status-check">✓</span>
+                                <span class="status-icon check">✓</span>
                                 <span>CSS</span>
                             </div>
-
+                            <div class="short-line"></div>
+                            <div class="project-status">
+                                <span class="status-icon check">✓</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="short-line"></div>
+                            <div class="project-status">
+                                <span class="status-icon working"></span>
+                                <span>Angular Migration</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,53 +60,23 @@
                         </div>
                         <div>
                             <div class="project-status">
-                                <span class="status-icon status-check">✓</span>
+                                <span class="status-icon check">✓</span>
                                 <span>HTML</span>
                             </div>
                             <div class="short-line"></div>
                             <div class="project-status">
-                                <span class="status-icon status-check">✓</span>
+                                <span class="status-icon check">✓</span>
                                 <span>CSS</span>
                             </div>
                             <div class="short-line"></div>
                             <div class="project-status">
-                                <span class="status-icon status-check">✓</span>
+                                <span class="status-icon check">✓</span>
                                 <span>JavaScript</span>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="longe-line"></div>
-
-                <div (click)="choosenProject('Devnext')" class="single-project" (mouseenter)="mouseEnter('preDevnext')"
-                    (mouseleave)="mouseLeave('leaveDevnext')">
-                    <div class="place-single-project">
-                        <div>
-                            <h3>Devnext</h3>
-                            @if (this.carts.hoverDevnext === true) {
-                            <img class="project-pre-image" [src]="arrowOutward">
-                            }
-                        </div>
-                        <div>
-                            <div class="project-status">
-                                <span class="status-icon status-check">✓</span>
-                                <span>Docker</span>
-                            </div>
                             <div class="short-line"></div>
                             <div class="project-status">
-                                <span class="status-icon status-check">✓</span>
-                                <span>CI/CD</span>
-                            </div>
-                            <div class="short-line"></div>
-                            <div class="project-status">
-                                <span class="status-icon status-check">✓</span>
-                                <span>Server</span>
-                            </div>
-                            <div class="short-line"></div>
-                            <div class="project-status">
-                                <span class="status-icon status-check">✓</span>
-                                <span>Security</span>
+                                <span class="status-icon planned"></span>
+                                <span>TypeScript Migration</span>
                             </div>
                         </div>
                     </div>
@@ -125,19 +95,83 @@
                         </div>
                         <div>
                             <div class="project-status">
-                                <span class="status-icon status-check">✓</span>
+                                <span class="status-icon check">✓</span>
                                 <span>Angular</span>
                             </div>
-
                             <div class="short-line"></div>
                             <div class="project-status">
-                                <span class="status-icon status-check">✓</span>
+                                <span class="status-icon check">✓</span>
                                 <span>TypeScript</span>
                             </div>
                             <div class="short-line"></div>
                             <div class="project-status">
-                                <span class="status-icon working"></span>
+                                <span class="status-icon check">✓</span>
                                 <span>Live Website</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="longe-line"></div>
+
+                <div (click)="choosenProject('Devnext')" class="single-project" (mouseenter)="mouseEnter('preDevnext')"
+                    (mouseleave)="mouseLeave('leaveDevnext')">
+                    <div class="place-single-project">
+                        <div>
+                            <h3>devnext</h3>
+                            @if (this.carts.hoverDevnext === true) {
+                            <img class="project-pre-image" [src]="arrowOutward">
+                            }
+                        </div>
+                        <div>
+                            <div class="project-status">
+                                <span class="status-icon check">✓</span>
+                                <span>Docker</span>
+                            </div>
+                            <div class="short-line"></div>
+                            <div class="project-status">
+                                <span class="status-icon check">✓</span>
+                                <span>CI/CD</span>
+                            </div>
+                            <div class="short-line"></div>
+                            <div class="project-status">
+                                <span class="status-icon check">✓</span>
+                                <span>Server</span>
+                            </div>
+                            <div class="short-line"></div>
+                            <div class="project-status">
+                                <span class="status-icon check">✓</span>
+                                <span>Security</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="longe-line"></div>
+
+                <div (click)="choosenProject('Devnext')" class="single-project" (mouseenter)="mouseEnter('preDevnext')"
+                    (mouseleave)="mouseLeave('leaveDevnext')">
+                    <div class="place-single-project">
+                        <div>
+                            <h3>devnext Vault</h3>
+                            @if (this.carts.hoverDevnext === true) {
+                            <img class="project-pre-image" [src]="arrowOutward">
+                            }
+                        </div>
+                        <div>
+                            <div class="project-status">
+                                <span class="status-icon planned"></span>
+                                <span>Python</span>
+                            </div>
+                            <div class="short-line"></div>
+                            <div class="project-status">
+                                <span class="status-icon planned"></span>
+                                <span>FastAPI</span>
+                            </div>
+                            <div class="short-line"></div>
+                            <div class="project-status">
+                                <span class="status-icon planned"></span>
+                                <span>PostgreSQL</span>
                             </div>
                         </div>
                     </div>
