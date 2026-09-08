@@ -149,12 +149,12 @@
 
                 <div class="longe-line"></div>
 
-                <div (click)="choosenProject('Devnext')" class="single-project" (mouseenter)="mouseEnter('preDevnext')"
-                    (mouseleave)="mouseLeave('leaveDevnext')">
+                <div (click)="choosenProject('DeVault')" class="single-project" (mouseenter)="mouseEnter('preDeVault')"
+                    (mouseleave)="mouseLeave('leaveDeVault')">
                     <div class="place-single-project">
                         <div>
                             <h3>devnext Vault</h3>
-                            @if (this.carts.hoverDevnext === true) {
+                            @if (this.carts.hoverDeVault === true) {
                             <img class="project-pre-image" [src]="arrowOutward">
                             }
                         </div>
@@ -192,14 +192,19 @@
                     <img class="pre" [src]="polloLocoPreview">
                     <img class="back" [src]="singleProjectBackground">
                 </div>
+                } @else if (this.carts.hoverGlueck === true) {
+                <div class="set-background back-distance-top">
+                    <img class="pre" [src]="glueckPreview">
+                    <img class="back" [src]="singleProjectBackground">
+                </div>
                 } @else if (this.carts.hoverDevnext === true) {
                 <div class="set-background back-distance-top">
                     <img class="pre" [src]="devnextPreview">
                     <img class="back" [src]="singleProjectBackground">
                 </div>
-                } @else if (this.carts.hoverGlueck === true) {
+                } @else if (this.carts.hoverDeVault === true) {
                 <div class="set-background back-distance-top">
-                    <img class="pre" [src]="glueckPreview">
+                    <img class="pre" [src]="deVaultPreview">
                     <img class="back" [src]="singleProjectBackground">
                 </div>
                 }

@@ -333,12 +333,12 @@ export class Language {
         s5Subtitle: 'Information on the Controller',
         s5Name: 'Sebastian Peters',
         s5CareOf: 'c/o flexdienst – #11290',
-        s5Street: 'Kurt-Schumacher-Straße 74',
+        s5Street: 'Kurt-Schumacher-Straße 76',
         s5City: '67663 Kaiserslautern',
         s5Country: 'Germany',
         s5PhoneLabel: 'Phone:',
         s5Phone: '0173-4540375',
-        s5Email: 'contact&#64;devcontain.de',
+        s5Email: 'contact@devcontain.de',
         s5ControllerText: 'The controller is the natural or legal person who, alone or jointly with others, determines the purposes and means of the processing of personal data (e.g. names, e-mail addresses, etc.).',
 
         s6Subtitle: 'Storage Duration',
@@ -442,7 +442,7 @@ export class Language {
         phoneLabel: 'Phone:',
         phone: '0173-4540375',
         emailLabel: 'Email:',
-        emailText: 'contact&#64;devcontain.de',
+        emailText: 'contact@devcontain.de',
 
         disclaimerLabel: 'Disclaimer:',
         contentTitle: 'Liability for Content',

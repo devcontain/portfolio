@@ -3,7 +3,7 @@ import { Carts } from '../../global/carts';
 import { Language } from '../../global/language';
 import { Router } from '@angular/router';
 
-type CartKey = 'setJoin' | 'setElPolloLoco' | 'setDevnext';
+type CartKey = 'setJoin' | 'setElPolloLoco' | 'setGlueckSelbermachen' | 'setDevnext' | 'setDevnextVault';
 type LinkKind = 'github' | 'live';
 
 @Component({
@@ -23,6 +23,10 @@ export class ProjectCartComponent implements OnInit {
     javaScriptCart: '../../../assets/img/javaScript-cart.png',
     firebaseCart: '../../../assets/img/firebase-cart.png',
 
+    pythonCart: '../../../assets/img/python-cart.png',
+    fastApiCart: '../../../assets/img/fastapi-cart.png',
+    postgreSqlCart: '../../../assets/img/postgresql-cart.png',
+
     joinPreviewCart: '../../assets/img/joinPreview-cart.png',
     polloPreviewCart: '../../assets/img/elPolloPreview-cart.png',
     bubblePreviewCart: '../../assets/img/joinPreview-cart.png',
@@ -37,27 +41,83 @@ export class ProjectCartComponent implements OnInit {
     arrowBtnHover: '../../../assets/img/arrow_btn_out.png'
   };
 
+  public technologies = [
+    // 0 - JOIN
+    [
+      { name: 'CSS', img: this.img.scssCart },
+      { name: 'HTML', img: this.img.htmlCart },
+      { name: 'Angular', img: this.img.angularCart },
+      { name: 'TypeScript', img: this.img.typeScriptCart }
+    ],
+
+    // 1 - El Pollo Loco
+    [
+      { name: 'HTML', img: this.img.htmlCart },
+      { name: 'CSS', img: this.img.scssCart },
+      { name: 'JavaScript', img: this.img.javaScriptCart }
+    ],
+
+    // 2 - Glück-Selbermachen
+    [
+      { name: 'HTML', img: this.img.htmlCart },
+      { name: 'CSS', img: this.img.scssCart },
+      { name: 'Angular', img: this.img.angularCart },
+      { name: 'TypeScript', img: this.img.typeScriptCart }
+    ],
+
+    // 3 - devnext
+    [
+      { name: 'Angular', img: this.img.angularCart },
+      { name: 'TypeScript', img: this.img.typeScriptCart }
+    ],
+
+    // 4 - devnext Vault
+    [
+      { name: 'Python', img: this.img.pythonCart },
+      { name: 'FastAPI', img: this.img.fastApiCart },
+      { name: 'PostgreSQL', img: this.img.postgreSqlCart }
+    ]
+  ];
 
   public isNextHovered = false;
   public isCloseHovered = false;
   public arrowBtnHover: boolean[] = [false, false];
+  public currentIndex = 0;
 
-  private readonly order: CartKey[] = ['setJoin', 'setElPolloLoco'];
-  private currentIndex = 0;
+  private readonly order: CartKey[] = [
+    'setJoin',
+    'setElPolloLoco',
+    'setGlueckSelbermachen',
+    'setDevnext',
+    'setDevnextVault'
+  ];
 
   private readonly links: Record<CartKey, Record<LinkKind, string | null>> = {
     setJoin: {
       github: 'https://github.com/Simon-Kral/join',
       live: 'https://devcontain.de/join/'
     },
+
     setElPolloLoco: {
       github: 'https://github.com/beekeepaz/El-pollo-loco',
       live: 'https://devcontain.de/elpollo/'
     },
+
+    setGlueckSelbermachen: {
+      github: 'https://github.com/devcontain/glueck-clean',
+      live: 'https://glück-selbermachen.de/'
+    },
+
     setDevnext: {
-      github: 'https://github.com/beekeepaz/da-bubble',
-      live: 'https://deine-domain.de/da-bubble/'
+      github: 'https://github.com/devcontain/devnext',
+      live: null
+    },
+
+    setDevnextVault: {
+      github: null,
+      live: null
     }
+
   };
 
   constructor(
@@ -200,11 +260,16 @@ export class ProjectCartComponent implements OnInit {
   private syncIndexFromFlags(): void {
     if (this.carts.setElPolloLoco) {
       this.currentIndex = 1;
-    } else if (this.carts.setDevnext) {
+    } else if (this.carts.setGlueck) {
       this.currentIndex = 2;
+    } else if (this.carts.setDevnext) {
+      this.currentIndex = 3;
+    } else if (this.carts.setDeVault) {
+      this.currentIndex = 4;
     } else {
       this.currentIndex = 0;
     }
+
     this.applyFlagsFromIndex();
   }
 
@@ -214,6 +279,8 @@ export class ProjectCartComponent implements OnInit {
   private applyFlagsFromIndex(): void {
     this.carts.setJoin = this.currentIndex === 0;
     this.carts.setElPolloLoco = this.currentIndex === 1;
-    this.carts.setDevnext = this.currentIndex === 2;
+    this.carts.setGlueck = this.currentIndex === 2;
+    this.carts.setDevnext = this.currentIndex === 3;
+    this.carts.setDeVault = this.currentIndex === 4;
   }
 }

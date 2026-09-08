@@ -17,8 +17,9 @@ export class ProjectsComponent implements OnInit {
 
   joinPreview = '../../assets/img/joinPreview.png';
   polloLocoPreview = '../../assets/img/pollo-locoPreview.png';
+  glueckPreview = '../../assets/img/racoon_CSM.png';
   devnextPreview = '../../assets/img/racoon_CSM.png';
-  glueckPreview = '../../assets/img/joinPreview.png'
+  deVaultPreview = '../../assets/img/racoon_CSM.png';
 
   singleProjectBackground = '../../assets/img/single-project-back-ground.png';
 
@@ -29,52 +30,63 @@ export class ProjectsComponent implements OnInit {
   ) { }
 
   /**
-   * Lifecycle: nothing on init (placeholder)
+   * Lifecycle hook: no initialization logic required
    */
   ngOnInit(): void { }
 
   /**
    * Set hover state for a project preview on mouse enter
-   * @param {string} enterproject - project identifier ('preJoin' | 'preElPollo' | 'preDaBubble')
+   * @param {string} enterproject - project identifier
+   * ('preJoin' | 'preElPollo' | 'preGlueck' | 'preDevnext' | 'preDeVault')
    */
-  mouseEnter(enterproject: string) {
+  mouseEnter(enterproject: string): void {
     this.carts.hoverJoin = enterproject === 'preJoin' ? true : this.carts.hoverJoin;
     this.carts.hoverElPollo = enterproject === 'preElPollo' ? true : this.carts.hoverElPollo;
-    this.carts.hoverDevnext = enterproject === 'preDevnext' ? true : this.carts.hoverDevnext;
     this.carts.hoverGlueck = enterproject === 'preGlueck' ? true : this.carts.hoverGlueck;
+    this.carts.hoverDevnext = enterproject === 'preDevnext' ? true : this.carts.hoverDevnext;
+    this.carts.hoverDeVault = enterproject === 'preDeVault' ? true : this.carts.hoverDeVault;
   }
 
   /**
    * Reset hover state for a project preview on mouse leave
-   * @param {string} leaveproject - project identifier ('leaveJoin' | 'leaveElPollo' | 'leaveDaBubble')
+   * @param {string} leaveproject - project identifier
+   * ('leaveJoin' | 'leaveElPollo' | 'leaveGlueck' | 'leaveDevnext' | 'leaveDeVault')
    */
-  mouseLeave(leaveproject: string) {
+  mouseLeave(leaveproject: string): void {
     this.carts.hoverJoin = leaveproject === 'leaveJoin' ? false : this.carts.hoverJoin;
     this.carts.hoverElPollo = leaveproject === 'leaveElPollo' ? false : this.carts.hoverElPollo;
-    this.carts.hoverDevnext = leaveproject === 'leaveDevnext' ? false : this.carts.hoverDevnext;
     this.carts.hoverGlueck = leaveproject === 'leaveGlueck' ? false : this.carts.hoverGlueck;
+    this.carts.hoverDevnext = leaveproject === 'leaveDevnext' ? false : this.carts.hoverDevnext;
+    this.carts.hoverDeVault = leaveproject === 'leaveDeVault' ? false : this.carts.hoverDeVault;
   }
 
   /**
-   * Handle project selection: disable page scroll, set project flag, and open modal
-   * @param {string} ele - project identifier ('Join' | 'ElPolloLoco' | 'DaBubble')
+   * Handle project selection: disable page scroll, set the selected project
+   * flag, and open the project modal
+   * @param {string} ele - project identifier
+   * ('Join' | 'ElPolloLoco' | 'Glueck' | 'Devnext' | 'DeVault')
    */
-  choosenProject(ele: string) {
+  choosenProject(ele: string): void {
     const html = document.documentElement;
     html.classList.add('no-scroll');
+
     this.getSingleProject(ele);
     this.carts.toggleModal();
   }
 
   /**
    * Activate the selected project flag in the carts service
-   * @param {string} ele - project identifier ('Join' | 'ElPolloLoco' | 'DaBubble')
-   * @returns {boolean | null} true if a matching project flag was set, otherwise null
+   * @param {string} ele - project identifier
+   * ('Join' | 'ElPolloLoco' | 'Glueck' | 'Devnext' | 'DeVault')
+   * @returns {boolean | null} true if a matching project flag was set,
+   * otherwise null
    */
-  getSingleProject(ele: string) {
+  getSingleProject(ele: string): boolean | null {
     return ele === 'Join' ? this.carts.setJoin = true :
       ele === 'ElPolloLoco' ? this.carts.setElPolloLoco = true :
-        ele === 'Devnext' ? this.carts.setDevnext = true :
-          ele === 'Glueck' ? this.carts.setGlueck = true : null;
+        ele === 'Glueck' ? this.carts.setGlueck = true :
+          ele === 'Devnext' ? this.carts.setDevnext = true :
+            ele === 'DeVault' ? this.carts.setDeVault = true :
+              null;
   }
 }

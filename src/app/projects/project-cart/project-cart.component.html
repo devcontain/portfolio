@@ -25,48 +25,10 @@
       }
 
       <div>
-        @if (this.carts.setJoin === true) {
+        @for (tech of technologies[currentIndex]; track tech.name) {
         <div>
-          <img [src]="img.scssCart" alt="CSS">
-          <span class="cart-font-icon">CSS</span>
-        </div>
-        <div>
-          <img [src]="img.htmlCart" alt="HTML">
-          <span class="cart-font-icon">HTML</span>
-        </div>
-        <div>
-          <img [src]="img.angularCart" alt="Angular">
-          <span class="cart-font-icon">Angular</span>
-        </div>
-        <div>
-          <img [src]="img.typeScriptCart" alt="TypeScript">
-          <span class="cart-font-icon">TypeScript</span>
-        </div>
-        } @else if (this.carts.setElPolloLoco === true) {
-        <div>
-          <img [src]="img.htmlCart" alt="HTML">
-          <span class="cart-font-icon">HTML</span>
-        </div>
-        <div>
-          <img [src]="img.scssCart" alt="CSS">
-          <span class="cart-font-icon">CSS</span>
-        </div>
-        <div>
-          <img [src]="img.javaScriptCart" alt="JavaScript">
-          <span class="cart-font-icon">JavaScript</span>
-        </div>
-        } @else if (this.carts.setDevnext === true) {
-        <div>
-          <img [src]="img.angularCart" alt="Angular">
-          <span class="cart-font-icon">Angular</span>
-        </div>
-        <div>
-          <img [src]="img.firebaseCart" alt="Firebase">
-          <span class="cart-font-icon">Firebase</span>
-        </div>
-        <div>
-          <img [src]="img.typeScriptCart" alt="TypeScript">
-          <span class="cart-font-icon">TypeScript</span>
+          <img [src]="tech.img" [alt]="tech.name">
+          <span class="cart-font-icon">{{ tech.name }}</span>
         </div>
         }
       </div>
