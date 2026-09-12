@@ -83,7 +83,7 @@ export class Language {
     };
 
     public german = {
-        navleft: 'Ueber mich',
+        navleft: 'Über mich',
         navmid: 'Skills',
         navright: 'Projekte',
 
@@ -95,7 +95,7 @@ export class Language {
         bannertxtd: 'Für die Arbeit verfügbar',
 
         abouta: 'Wer ich bin',
-        aboutb: 'Ueber mich',
+        aboutb: 'Über mich',
         aboutc: 'Mein Name ist Sebastian, ich bin technisch versiert und arbeite konsequent lösungsorientiert – komplexe Aufgaben und gut durchdachte Anwendungen motivieren mich. Moderne Technologien und die Möglichkeit, mich kontinuierlich weiterzuentwickeln, treiben mich an.',
         aboutd: 'Ich bin flexibel, was die Arbeitsumgebung angeht, und kann sowohl vor Ort als auch aus der Ferne effektiv arbeiten.',
         aboute: 'Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um meine Kenntnisse und Fähigkeiten weiterzuentwickeln.',

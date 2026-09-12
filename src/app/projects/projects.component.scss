@@ -130,12 +130,20 @@ section {
     }
 }
 
-.back-distance-bot {
+.join-position {
+    padding-bottom: 400px;
+}
+
+.loco-position {
     padding-bottom: 200px;
 }
 
-.back-distance-top {
+.devnext-position {
     padding-top: 200px;
+}
+
+.devault-position {
+    padding-top: 400px;
 }
 
 .short-line {
@@ -191,15 +199,6 @@ img.back {
     display: block;
     height: 100%;
 }
-
-/*     .working .status-icon {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: #70e000;
-        box-shadow: 0 0 0 0 rgba(112, 224, 0, 0.5);
-        animation: pulse 1.75s infinite;
-    } */
 
 @keyframes pulse {
     0% {

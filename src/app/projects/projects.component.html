@@ -1,5 +1,5 @@
-<div class="background-color">
-    <section id="projects">
+<div id="projects" class="background-color">
+    <section>
         <div>
             <div class="portfolio-header">
                 <h2>Portfolio</h2>
@@ -181,29 +181,29 @@
         </div>
 
         <div class="preview-projects">
-            <div class="pre-pos">
+            <div>
                 @if (this.carts.hoverJoin === true) {
-                <div class="set-background back-distance-bot">
+                <div class="set-background join-position">
                     <img class="pre" [src]="joinPreview">
                     <img class="back" [src]="singleProjectBackground">
                 </div>
                 } @else if (this.carts.hoverElPollo === true) {
-                <div class="set-background">
+                <div class="set-background loco-position">
                     <img class="pre" [src]="polloLocoPreview">
                     <img class="back" [src]="singleProjectBackground">
                 </div>
                 } @else if (this.carts.hoverGlueck === true) {
-                <div class="set-background back-distance-top">
+                <div class="set-background glueck-position">
                     <img class="pre" [src]="glueckPreview">
                     <img class="back" [src]="singleProjectBackground">
                 </div>
                 } @else if (this.carts.hoverDevnext === true) {
-                <div class="set-background back-distance-top">
+                <div class="set-background devnext-position">
                     <img class="pre" [src]="devnextPreview">
                     <img class="back" [src]="singleProjectBackground">
                 </div>
                 } @else if (this.carts.hoverDeVault === true) {
-                <div class="set-background back-distance-top">
+                <div class="set-background devault-position">
                     <img class="pre" [src]="deVaultPreview">
                     <img class="back" [src]="singleProjectBackground">
                 </div>

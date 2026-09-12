@@ -5,8 +5,8 @@ section {
   @include position(null, null, 100%);
   background-color: $c-bg;
   color: $c-fg;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 148px;
+  padding-bottom: 148px;
 
   >div {
     @include display(flex, center, center, column);
