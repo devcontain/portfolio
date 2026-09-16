@@ -8,9 +8,15 @@
         } @else if (this.carts.setElPolloLoco === true) {
         <h4>{{ languageService.loco.cardnumber }}</h4>
         <h1>{{ languageService.loco.headercard }}</h1>
+        } @else if (this.carts.setGlueck === true) {
+        <h4>{{ languageServiceCard.glueck.cardnumber }}</h4>
+        <h1>{{ languageServiceCard.glueck.headercard }}</h1>
         } @else if (this.carts.setDevnext === true) {
-        <h4>{{ languageService.bubble.cardnumber }}</h4>
-        <h1>{{ languageService.bubble.headercard }}</h1>
+        <h4>{{ languageServiceCard.devnext.cardnumber }}</h4>
+        <h1>{{ languageServiceCard.devnext.headercard }}</h1>
+        } @else if (this.carts.setDeVault === true) {
+        <h4>{{ languageServiceCard.devault.cardnumber }}</h4>
+        <h1>{{ languageServiceCard.devault.headercard }}</h1>
         }
       </div>
 
@@ -20,8 +26,12 @@
       <span>{{ languageService.join.descriptcard }}</span>
       } @else if (this.carts.setElPolloLoco === true) {
       <span>{{ languageService.loco.descriptcard }}</span>
+      } @else if (this.carts.setGlueck === true) {
+      <span>{{ languageServiceCard.glueck.descriptcard }}</span>
       } @else if (this.carts.setDevnext === true) {
-      <span>{{ languageService.loco.descriptcard }}</span>
+      <span>{{ languageServiceCard.devnext.descriptcard }}</span>
+      } @else if (this.carts.setDeVault === true) {
+      <span>{{ languageServiceCard.devault.descriptcard }}</span>
       }
 
       <div>
@@ -59,8 +69,12 @@
           <img class="cart-preview" [src]="img.joinPreviewCart" alt="Preview">
           } @else if (this.carts.setElPolloLoco === true) {
           <img class="cart-preview" [src]="img.polloPreviewCart" alt="Preview">
+          } @else if (this.carts.setGlueck === true) {
+          <img class="cart-preview" [src]="img.glueckPreviewCart" alt="Preview">
           } @else if (this.carts.setDevnext === true) {
-          <img class="cart-preview" [src]="img.bubblePreviewCart" alt="Preview">
+          <img class="cart-preview" [src]="img.devnextPreviewCart" alt="Preview">
+          } @else if (this.carts.setDeVault === true) {
+          <img class="cart-preview" [src]="img.deVaultPreviewCart" alt="Preview">
           }
         </div>
 

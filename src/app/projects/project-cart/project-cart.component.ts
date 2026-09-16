@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Carts } from '../../global/carts';
 import { Language } from '../../global/language';
+import { LanguageCards } from '../../global/languageCards';
 import { Router } from '@angular/router';
 
 type CartKey = 'setJoin' | 'setElPolloLoco' | 'setGlueckSelbermachen' | 'setDevnext' | 'setDevnextVault';
@@ -29,9 +30,11 @@ export class ProjectCartComponent implements OnInit {
 
     joinPreviewCart: '../../assets/img/joinPreview-cart.png',
     polloPreviewCart: '../../assets/img/elPolloPreview-cart.png',
-    bubblePreviewCart: '../../assets/img/joinPreview-cart.png',
+    glueckPreviewCart: '../../assets/img/glueck-card.png',
+    devnextPreviewCart: '../../assets/img/devnext-card.png',
+    deVaultPreviewCart: '../../assets/img/deVault-card.png',
 
-    nextFirst: '../../assets/img/arrow-hirizontal.png',
+    nextFirst: '../../assets/img/arrow-horizontale.png',
     nextSecond: '../../assets/img/arrow-horizontale-moved.png',
 
     closeDefault: '../../../assets/img/close_small.png',
@@ -123,6 +126,7 @@ export class ProjectCartComponent implements OnInit {
   constructor(
     public carts: Carts,
     public languageService: Language,
+    public languageServiceCard: LanguageCards,
     private router: Router
   ) { }
 
