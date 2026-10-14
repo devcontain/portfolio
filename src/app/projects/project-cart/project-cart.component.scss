@@ -176,6 +176,12 @@ button:disabled {
     color: $c-fg;
 }
 
+.svg-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
 .grayscaled-picture {
     filter: grayscale(100%);
 }

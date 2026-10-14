@@ -37,7 +37,7 @@
       <div>
         @for (tech of technologies[currentIndex]; track tech.name) {
         <div>
-          <img [src]="tech.img" [alt]="tech.name">
+          <img [class.svg-icon]="tech.img.endsWith('.svg')" [src]="tech.img" [alt]="tech.name">
           <span class="cart-font-icon">{{ tech.name }}</span>
         </div>
         }

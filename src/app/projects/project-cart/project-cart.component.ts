@@ -24,9 +24,14 @@ export class ProjectCartComponent implements OnInit {
     javaScriptCart: '../../../assets/img/javaScript-cart.png',
     firebaseCart: '../../../assets/img/firebase-cart.png',
 
-    pythonCart: '../../../assets/img/python-cart.png',
-    fastApiCart: '../../../assets/img/fastapi-cart.png',
-    postgreSqlCart: '../../../assets/img/postgresql-cart.png',
+    pythonCart: '../../../assets/img/python-green.svg',
+    fastApiCart: '../../../assets/img/fastapi-green.svg',
+    postgreSqlCart: '../../../assets/img/postgresql-green.svg',
+
+    dockerCart: '../../../assets/img/docker-green.svg',
+    githubActions: '../../../assets/img/githubactions-green.svg',
+    grafanaCart: '../../../assets/img/grafana-green.svg',
+    prometheusCart: '../../../assets/img/prometheus-green.svg',
 
     joinPreviewCart: '../../assets/img/joinPreview-cart.png',
     polloPreviewCart: '../../assets/img/elPolloPreview-cart.png',
@@ -70,8 +75,10 @@ export class ProjectCartComponent implements OnInit {
 
     // 3 - devnext
     [
-      { name: 'Angular', img: this.img.angularCart },
-      { name: 'TypeScript', img: this.img.typeScriptCart }
+      { name: 'Docker', img: this.img.dockerCart },
+      { name: 'CI/CD', img: this.img.githubActions },
+      { name: 'Prometheus', img: this.img.prometheusCart },
+      { name: 'Grafana', img: this.img.grafanaCart }
     ],
 
     // 4 - devnext Vault
