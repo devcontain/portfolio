@@ -162,12 +162,23 @@ button {
 }
 
 
-button:hover .btn-cart {
+button:not(:disabled):hover .btn-cart {
     color: $c-accent;
+}
+
+button:disabled {
+    cursor: default;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .cart-font-icon {
     color: $c-fg;
+}
+
+.grayscaled-picture {
+    filter: grayscale(100%);
 }
 
 @keyframes backdropIn {

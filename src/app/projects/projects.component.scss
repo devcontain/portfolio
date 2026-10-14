@@ -130,6 +130,14 @@ section {
     }
 }
 
+.gray-planned {
+    opacity: 0.4;
+}
+
+.grayscaled-picture {
+    filter: grayscale(100%);
+}
+
 .join-position {
     padding-bottom: 400px;
 }

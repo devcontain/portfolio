@@ -45,12 +45,12 @@
 
       <div class="place-btn">
         <div class="btn-gap">
-          <button (mouseenter)="onArrowBtnEnter(0)" (mouseleave)="onArrowBtnLeave(0)" (click)="goTo('github')">
+          <button [disabled]="this.carts.setDeVault" (mouseenter)="!this.carts.setDeVault && onArrowBtnEnter(0)" (mouseleave)="!this.carts.setDeVault && onArrowBtnLeave(0)" (click)="goTo('github')">
             <span class="btn-cart">GitHub</span>
             <img class="btn-arrow" [src]="arrowBtnSrc(0)" alt="">
           </button>
 
-          <button (mouseenter)="onArrowBtnEnter(1)" (mouseleave)="onArrowBtnLeave(1)" (click)="goTo('live')">
+          <button [disabled]="this.carts.setDeVault" (mouseenter)="!this.carts.setDeVault && onArrowBtnEnter(1)" (mouseleave)="!this.carts.setDeVault && onArrowBtnLeave(1)" (click)="goTo('live')">
             <span class="btn-cart">{{ languageService.currentHeader.testbtncard }}</span>
             <img class="btn-arrow" [src]="arrowBtnSrc(1)" alt="">
           </button>
@@ -74,7 +74,7 @@
           } @else if (this.carts.setDevnext === true) {
           <img class="cart-preview" [src]="img.devnextPreviewCart" alt="Preview">
           } @else if (this.carts.setDeVault === true) {
-          <img class="cart-preview" [src]="img.deVaultPreviewCart" alt="Preview">
+          <img class="cart-preview grayscaled-picture" [src]="img.deVaultPreviewCart" alt="Preview">
           }
         </div>
 

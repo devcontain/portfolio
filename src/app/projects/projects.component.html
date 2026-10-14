@@ -149,7 +149,7 @@
 
                 <div class="longe-line"></div>
 
-                <div (click)="choosenProject('DeVault')" class="single-project" (mouseenter)="mouseEnter('preDeVault')"
+                <div (click)="choosenProject('DeVault')" class="single-project gray-planned" (mouseenter)="mouseEnter('preDeVault')"
                     (mouseleave)="mouseLeave('leaveDeVault')">
                     <div class="place-single-project">
                         <div>
@@ -204,8 +204,8 @@
                 </div>
                 } @else if (this.carts.hoverDeVault === true) {
                 <div class="set-background devault-position">
-                    <img class="pre" [src]="deVaultPreview">
-                    <img class="back" [src]="singleProjectBackground">
+                    <img class="pre grayscaled-picture" [src]="deVaultPreview">
+                    <img class="back grayscaled-picture" [src]="singleProjectBackground">
                 </div>
                 }
             </div>
