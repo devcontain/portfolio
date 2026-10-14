@@ -45,12 +45,16 @@
 
       <div class="place-btn">
         <div class="btn-gap">
-          <button [disabled]="this.carts.setDeVault" (mouseenter)="!this.carts.setDeVault && onArrowBtnEnter(0)" (mouseleave)="!this.carts.setDeVault && onArrowBtnLeave(0)" (click)="goTo('github')">
+          <button [disabled]="this.carts.setDeVault" (mouseenter)="!this.carts.setDeVault && onArrowBtnEnter(0)"
+            (mouseleave)="!this.carts.setDeVault && onArrowBtnLeave(0)" (click)="goTo('github')">
             <span class="btn-cart">GitHub</span>
             <img class="btn-arrow" [src]="arrowBtnSrc(0)" alt="">
           </button>
 
-          <button [disabled]="this.carts.setDeVault" (mouseenter)="!this.carts.setDeVault && onArrowBtnEnter(1)" (mouseleave)="!this.carts.setDeVault && onArrowBtnLeave(1)" (click)="goTo('live')">
+          <button [disabled]="this.carts.setDeVault || this.carts.setDevnext"
+            (mouseenter)="!this.carts.setDeVault && !this.carts.setDevnext && onArrowBtnEnter(1)"
+            (mouseleave)="!this.carts.setDeVault && !this.carts.setDevnext && onArrowBtnLeave(1)"
+            (click)="goTo('live')">
             <span class="btn-cart">{{ languageService.currentHeader.testbtncard }}</span>
             <img class="btn-arrow" [src]="arrowBtnSrc(1)" alt="">
           </button>
