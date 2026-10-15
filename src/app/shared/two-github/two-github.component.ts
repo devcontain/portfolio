@@ -9,7 +9,7 @@ import { TwoGithubService } from '../services/two-github.service';
   styleUrl: './two-github.component.scss'
 })
 export class TwoGithubComponent {
-  public githubService = inject(TwoGithubService);
+  private githubService = inject(TwoGithubService);
 
   public close(): void {
     this.githubService.close();
