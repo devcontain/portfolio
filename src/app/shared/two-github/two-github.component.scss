@@ -32,11 +32,9 @@
     border: 1px solid $c-accent;
     border-radius: 30px;
 
-    background: linear-gradient(
-        55.22deg,
-        #1C1C1C 36.26%,
-        #08463B 93.28%
-    );
+    background: linear-gradient(55.22deg,
+            #1C1C1C 36.26%,
+            #08463B 93.28%);
 
     font-family: var(--ff-karla);
     color: $c-fg;
@@ -102,7 +100,7 @@
     text-decoration: none;
 
     transition: border-color 150ms ease,
-                transform 150ms ease;
+        transform 150ms ease;
 
     &:hover {
         border-color: $c-accent;
@@ -121,15 +119,19 @@
     }
 }
 
-.github-option.new {
-    border-color: $c-accent;
-    background: rgba(8, 70, 59, 0.5);
-}
-
 .github-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-size: 12px;
     letter-spacing: 2px;
     color: $c-accent;
+
+    img {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+    }
 }
 
 .github-link {
@@ -138,8 +140,13 @@
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes cardPop {

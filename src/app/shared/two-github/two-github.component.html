@@ -1,31 +1,49 @@
 @if (isOpen()) {
-  <div class="preview" (click)="close()">
-    <div class="cart-layer" (click)="$event.stopPropagation()">
+<div class="preview" (click)="close()">
+  <div class="cart-layer" (click)="$event.stopPropagation()">
 
-      <button class="close-button" (click)="close()" aria-label="Close">✕</button>
+    <button class="close-button" (click)="close()" aria-label="Close">✕</button>
 
-      <div class="github-header">
-        <h2>GitHub Portfolios</h2>
-        <p>Explore my development journey and discover my projects.</p>
-      </div>
+    <div class="github-header">
+      <h2>GitHub Portfolios</h2>
+      <p>Explore my development journey and discover my projects.</p>
+    </div>
 
-      <div class="github-options">
+    <div class="github-options">
 
-        <a class="github-option old" href="https://github.com/beekeepaz/portfolio" target="_blank" rel="noopener noreferrer">
-          <span class="github-status">ARCHIVE</span>
-          <h3>Portfolio Old</h3>
-          <p>My earlier projects and first steps in web development.</p>
-          <span class="github-link">github.com/beekeepaz</span>
-        </a>
+      <a class="github-option old" [href]="getGithubUrl('old')" target="_blank"
+        rel="noopener noreferrer">
+        <span class="github-status"><img [src]="githubHover" alt="GitHub">ARCHIVE</span>
+        <h3>
+          @if (getHubType() === 'join') {
+          Join Old
+          } @else if (getHubType() === 'pollo') {
+          El Pollo Loco Old
+          } @else {
+          Portfolio Old
+          }
+        </h3>
+        <p>My earlier projects and first steps in web development.</p>
+        <span class="github-link">github.com/beekeepaz</span>
+      </a>
 
-        <a class="github-option new" href="https://github.com/devcontain/portfolio" target="_blank" rel="noopener noreferrer">
-          <span class="github-status">CURRENT</span>
-          <h3>Portfolio New</h3>
-          <p>My latest projects, technologies and DevOps experience.</p>
-          <span class="github-link">github.com/devcontain</span>
-        </a>
+      <a class="github-option new" [href]="getGithubUrl('new')" target="_blank"
+        rel="noopener noreferrer">
+        <span class="github-status"><img [src]="githubHover" alt="GitHub">CURRENT</span>
+        <h3>
+          @if (getHubType() === 'join') {
+          Join New
+          } @else if (getHubType() === 'pollo') {
+          El Pollo Loco New
+          } @else {
+          Portfolio New
+          }
+        </h3>
+        <p>My latest projects, technologies and DevOps experience.</p>
+        <span class="github-link">github.com/devcontain</span>
+      </a>
 
-      </div>
     </div>
   </div>
+</div>
 }

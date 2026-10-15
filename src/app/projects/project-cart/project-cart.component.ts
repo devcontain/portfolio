@@ -3,6 +3,7 @@ import { Carts } from '../../global/carts';
 import { Language } from '../../global/language';
 import { LanguageCards } from '../../global/languageCards';
 import { Router } from '@angular/router';
+import { TwoGithubService } from '../../shared/services/two-github.service';
 
 type CartKey = 'setJoin' | 'setElPolloLoco' | 'setGlueckSelbermachen' | 'setDevnext' | 'setDevnextVault';
 type LinkKind = 'github' | 'live';
@@ -134,7 +135,8 @@ export class ProjectCartComponent implements OnInit {
     public carts: Carts,
     public languageService: Language,
     public languageServiceCard: LanguageCards,
-    private router: Router
+    private router: Router,
+    public githubService: TwoGithubService
   ) { }
 
   /**
@@ -246,12 +248,19 @@ export class ProjectCartComponent implements OnInit {
     return this.order[this.currentIndex];
   }
 
-  /**
-   * Open the active project's GitHub or live link in a new tab
-   * @param {'github'|'live'} kind - link kind to open
-   * @returns {void}
-   */
   goTo(kind: LinkKind): void {
+    if (kind === 'github') {
+      if (this.carts.setJoin) {
+        this.githubService.open('join');
+        return;
+      }
+
+      if (this.carts.setElPolloLoco) {
+        this.githubService.open('pollo');
+        return;
+      }
+    }
+
     const url = this.links[this.activeKey][kind];
     if (!url) return;
     window.open(url, '_blank', 'noopener,noreferrer');
