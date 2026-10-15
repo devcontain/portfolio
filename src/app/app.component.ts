@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './shared/footer/footer/footer.component';
 /* import { CustomCursorComponent } from './shared/custom-cursor/custom-cursor.component'; */
 import { HeaderComponent } from './shared/header/header/header.component';
+import { TwoGithubComponent } from './shared/two-github/two-github.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { HeaderComponent } from './shared/header/header/header.component';
     FooterComponent,
     /* CustomCursorComponent, */
     HeaderComponent,
+    TwoGithubComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

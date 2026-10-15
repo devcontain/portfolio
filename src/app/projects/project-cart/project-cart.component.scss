@@ -39,9 +39,16 @@
 }
 
 .cart-layer {
-    @include display(flex, center, center);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 520px;
+    column-gap: 64px;
+    align-items: center;
+
     width: 100%;
     max-width: 1250px;
+    padding: 32px 64px;
+    box-sizing: border-box;
+
     border-radius: 30px;
     border: 1px solid $c-accent;
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
@@ -67,7 +74,9 @@
 .project-description {
     @include display(flex, center, null, column);
     gap: 16px;
-    padding-left: 64px;
+    /*     padding-left: 64px; */
+    padding-left: 0;
+    min-width: 0;
 
     >.project-headers {
         @include display(flex, start, start, column);
@@ -117,7 +126,7 @@
 
 .cart-rightside-pos {
     @include display(flex, center, end, column);
-    padding-inline: 128px 80px;
+    padding-inline: 0;
 }
 
 .closes-wrap {
@@ -226,6 +235,9 @@ button:disabled {
 
 @include respond(1300px) {
     .cart-layer {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
         width: unset;
     }
 

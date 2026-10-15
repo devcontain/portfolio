@@ -2,6 +2,7 @@ import { Component, VERSION, OnInit, ViewChild, ElementRef } from '@angular/core
 import { Router } from "@angular/router";
 import { MarqueeComponent } from '../main/marquee/marquee.component';
 import { Language } from '../global/language';
+import { TwoGithubService } from '../shared/services/two-github.service';
 
 @Component({
   selector: 'app-main',
@@ -31,7 +32,8 @@ export class MainComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public languageService: Language
+    public languageService: Language,
+    public githubService: TwoGithubService
   ) { }
 
   /**
