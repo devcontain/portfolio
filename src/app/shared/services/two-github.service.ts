@@ -10,6 +10,7 @@ export class TwoGithubService {
   public hubType = signal<HubType>('portfolio');
 
   public open(type: HubType = 'portfolio'): void {
+    document.documentElement.classList.add('no-scroll');
     this.hubType.set(type);
     this.isOpen.set(true);
   }

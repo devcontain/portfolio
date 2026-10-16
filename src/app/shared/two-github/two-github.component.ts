@@ -11,7 +11,14 @@ import { TwoGithubService, HubType } from '../services/two-github.service';
 export class TwoGithubComponent {
   private githubService = inject(TwoGithubService);
 
-  githubHover = 'assets/img/github_white.png';
+  github = 'assets/img/github_white.png';
+
+  private img = {
+    closeDefault: '../../../assets/img/close_small.png',
+    closeHover: '../../../assets/img/close.png'
+  }
+
+  public isCloseHovered = false;
 
   public getGithubUrl(version: 'old' | 'new'): string {
     const links = {
@@ -32,7 +39,26 @@ export class TwoGithubComponent {
     return links[this.getHubType()][version];
   }
 
+  /**
+ * Set close icon to hover state
+ */
+  onCloseEnter(): void {
+    this.isCloseHovered = true;
+  }
+
+  /**
+   * Reset close icon hover state
+   */
+  onCloseLeave(): void {
+    this.isCloseHovered = false;
+  }
+
+  get closeIcon(): string {
+    return this.isCloseHovered ? this.img.closeHover : this.img.closeDefault;
+  }
+
   public close(): void {
+    document.documentElement.classList.remove('no-scroll');
     this.githubService.close();
   }
 

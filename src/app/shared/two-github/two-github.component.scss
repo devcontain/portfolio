@@ -42,23 +42,24 @@
     animation: cardPop 240ms cubic-bezier(.2, .8, .2, 1) both;
 }
 
-.close-button {
+.closes-wrap {
+    display: flex;
+    justify-content: flex-end;
+    transform: translateY(-20px);
+}
+
+.close {
     position: absolute;
-    top: 24px;
-    right: 32px;
-
-    border: none;
-    background: transparent;
-    color: $c-fg;
-    font-size: 24px;
     cursor: pointer;
-
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transform-origin: center center;
     transition: transform 150ms ease;
+}
 
-    &:hover {
-        transform: scale(1.2);
-        color: $c-accent;
-    }
+.close:hover {
+    transform: scale(1.35);
 }
 
 .github-header {
