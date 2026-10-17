@@ -8,7 +8,6 @@
     animation: fadeOut 150ms ease-in both;
 }
 
-// MODAL HINTERGRUND
 .preview {
     position: fixed;
     inset: 0;
@@ -25,7 +24,6 @@
     animation: fadeIn 220ms ease-out both;
 }
 
-// MODAL
 .cart-layer {
     position: relative;
 
@@ -55,7 +53,6 @@
     transform-origin: 50% 60%;
 }
 
-// SCHLIESSEN
 .closes-wrap {
     position: absolute;
     top: 48px;
@@ -79,7 +76,6 @@
     }
 }
 
-// HAUPTBEREICH
 .cart-main {
     display: flex;
     align-items: stretch;
@@ -90,7 +86,6 @@
     flex-shrink: 0;
 }
 
-// LINKE SPALTE
 .project-left {
     display: flex;
     flex-direction: column;
@@ -99,7 +94,6 @@
     min-width: 0;
 }
 
-// PROJEKTNUMMER
 .project-number {
     margin-bottom: 6px;
     flex-shrink: 0;
@@ -114,7 +108,6 @@
     }
 }
 
-// ÜBERSCHRIFT UND BESCHREIBUNG
 .project-description {
     display: flex;
     flex-direction: column;
@@ -156,7 +149,6 @@
     }
 }
 
-// UNTERER PROJEKTBEREICH
 .project-footer {
     display: flex;
     flex-direction: column;
@@ -167,7 +159,6 @@
     min-width: 0;
 }
 
-// TECHNOLOGIEN
 .project-technologies {
     display: flex;
     align-items: center;
@@ -198,7 +189,6 @@
     color: $c-fg;
 }
 
-// BUTTONS
 .place-btn {
     display: flex;
     align-items: center;
@@ -232,7 +222,6 @@ button:disabled {
     pointer-events: none;
 }
 
-// RECHTE SPALTE
 .cart-rightside-pos {
     display: flex;
     flex-direction: column;
@@ -262,7 +251,6 @@ button:disabled {
     filter: grayscale(100%);
 }
 
-// NÄCHSTES PROJEKT
 .pos-next-button {
     display: flex;
     justify-content: flex-end;
@@ -272,6 +260,7 @@ button:disabled {
 }
 
 .next-button {
+    all: unset;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -291,9 +280,10 @@ button:disabled {
     }
 
     >img {
-        width: 24px;
-        height: 24px;
+        width: 42px;
+        height: 42px;
         object-fit: contain;
+        flex-shrink: 0;
     }
 
     &:hover .next-span {
@@ -301,7 +291,6 @@ button:disabled {
     }
 }
 
-// ANIMATIONEN
 @keyframes backdropIn {
     from {
         opacity: 0;
@@ -336,7 +325,6 @@ button:disabled {
     }
 }
 
-// RESPONSIVE BIS 1100PX
 @include respond(1100px) {
     .cart-layer {
         max-width: 650px;
@@ -383,7 +371,6 @@ button:disabled {
     }
 }
 
-// RESPONSIVE BIS 675PX
 @include respond(675px) {
     .cart-layer {
         padding: 48px 24px 32px;
@@ -434,7 +421,6 @@ button:disabled {
     }
 }
 
-// RESPONSIVE BIS 540PX
 @include respond(540px) {
     .preview {
         padding: 8px;
