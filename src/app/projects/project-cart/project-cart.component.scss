@@ -35,6 +35,13 @@
     max-height: 90vh;
     max-height: 90dvh;
     overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     padding: 48px 64px 40px;
     box-sizing: border-box;
@@ -42,8 +49,8 @@
     border-radius: 30px;
     border: 1px solid $c-accent;
     background: linear-gradient(55.22deg,
-            #1C1C1C 36.26%,
-            #08463B 93.28%);
+        #1C1C1C 36.26%,
+        #08463B 93.28%);
 
     font-family: var(--ff-karla);
     font-size: 18px;
@@ -291,6 +298,8 @@ button:disabled {
     }
 }
 
+// ANIMATIONS
+
 @keyframes backdropIn {
     from {
         opacity: 0;
@@ -325,15 +334,17 @@ button:disabled {
     }
 }
 
+// RESPONSIVE: 1100px
+
 @include respond(1100px) {
     .cart-layer {
         max-width: 650px;
-        padding: 48px 48px 40px;
+        padding: 48px 48px 24px;
     }
 
     .cart-main {
         flex-direction: column;
-        gap: 40px;
+        gap: 16px;
         min-height: 0;
     }
 
@@ -352,17 +363,29 @@ button:disabled {
     }
 
     .project-number {
+        margin-bottom: 12px;
+
         >h4 {
-            font-size: 80px;
-            line-height: 80px;
+            font-size: 56px;
+            line-height: 56px;
         }
     }
 
     .project-headers {
         >h1 {
-            font-size: 64px;
-            line-height: 64px;
+            font-size: 44px;
+            line-height: 48px;
+            margin-bottom: 8px;
         }
+    }
+
+    .project-footer {
+        padding-top: 16px;
+        gap: 8px;
+    }
+
+    .pos-next-button {
+        margin-top: 8px;
     }
 
     .closes-wrap {
@@ -371,29 +394,31 @@ button:disabled {
     }
 }
 
+// RESPONSIVE: 675px
+
 @include respond(675px) {
     .cart-layer {
-        padding: 48px 24px 32px;
+        padding: 48px 24px 24px;
         border-radius: 24px;
     }
 
     .cart-main {
-        gap: 32px;
+        gap: 12px;
     }
 
     .project-number {
-        margin-bottom: 32px;
+        margin-bottom: 8px;
 
         >h4 {
-            font-size: 64px;
-            line-height: 64px;
+            font-size: 48px;
+            line-height: 48px;
         }
     }
 
     .project-headers {
         >h1 {
-            font-size: 42px;
-            line-height: 52px;
+            font-size: 38px;
+            line-height: 42px;
         }
     }
 
@@ -405,7 +430,8 @@ button:disabled {
     }
 
     .project-footer {
-        padding-top: 32px;
+        padding-top: 12px;
+        gap: 8px;
     }
 
     .project-technologies {
@@ -417,9 +443,11 @@ button:disabled {
     }
 
     .pos-next-button {
-        margin-top: 32px;
+        margin-top: 8px;
     }
 }
+
+// RESPONSIVE: 540px
 
 @include respond(540px) {
     .preview {
@@ -428,12 +456,12 @@ button:disabled {
 
     .cart-layer {
         max-height: calc(100dvh - 16px);
-        padding: 48px 16px 24px;
+        padding: 48px 16px 16px;
         border-radius: 20px;
     }
 
     .cart-main {
-        gap: 24px;
+        gap: 12px;
     }
 
     .closes-wrap {
@@ -442,18 +470,19 @@ button:disabled {
     }
 
     .project-number {
-        margin-bottom: 32px;
+        margin-bottom: 8px;
 
         >h4 {
-            font-size: 48px;
-            line-height: 58px;
+            font-size: 40px;
+            line-height: 44px;
         }
     }
 
     .project-headers {
         >h1 {
-            font-size: 36px;
-            line-height: 44px;
+            font-size: 32px;
+            line-height: 38px;
+            margin-bottom: 8px;
         }
     }
 
@@ -461,6 +490,7 @@ button:disabled {
         >h2 {
             font-size: 16px;
             line-height: 20px;
+            margin-bottom: 8px;
         }
 
         >span {
@@ -469,8 +499,8 @@ button:disabled {
     }
 
     .project-footer {
-        gap: 16px;
-        padding-top: 32px;
+        gap: 8px;
+        padding-top: 12px;
     }
 
     .project-technologies {
@@ -498,6 +528,10 @@ button:disabled {
     .place-btn button {
         width: 132px;
         height: 42px;
+    }
+
+    .pos-next-button {
+        margin-top: 8px;
     }
 
     .next-button {

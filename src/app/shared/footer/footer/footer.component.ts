@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Language } from '../../../global/language';
 import { RouterLink, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { TwoGithubService } from '../../services/two-github.service';
 
 @Component({
   selector: 'app-footer',
@@ -13,6 +14,7 @@ import { filter } from 'rxjs/operators';
 export class FooterComponent {
   constructor(
     public languageService: Language,
+    public githubService: TwoGithubService,
     private router: Router
   ) {
     this.router.events.pipe(

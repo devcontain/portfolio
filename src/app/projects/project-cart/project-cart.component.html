@@ -1,7 +1,6 @@
 <div (click)="close()" class="preview">
   <div (click)="$event.stopPropagation()" class="cart-layer">
 
-    <!-- SCHLIESSEN -->
     <div class="closes-wrap">
       <img class="closes" [src]="closeIcon" (mouseenter)="onCloseEnter()" (mouseleave)="onCloseLeave()"
         (click)="close()" alt="Close">
@@ -9,10 +8,8 @@
 
     <div class="cart-main">
 
-      <!-- LINKE SPALTE -->
       <div class="project-left">
 
-        <!-- PROJEKTNUMMER -->
         <div class="project-number">
           @if (this.carts.setJoin) {
           <h4>{{ languageService.join.cardnumber }}</h4>
@@ -27,10 +24,8 @@
           }
         </div>
 
-        <!-- PROJEKTINHALT -->
         <div class="project-description">
 
-          <!-- ÜBERSCHRIFT -->
           <div class="project-headers">
             @if (this.carts.setJoin) {
             <h1>{{ languageService.join.headercard }}</h1>
@@ -45,7 +40,6 @@
             }
           </div>
 
-          <!-- BESCHREIBUNG -->
           <div class="project-info">
             <h2>{{ languageService.currentHeader.headercart }}</h2>
 
@@ -63,10 +57,7 @@
           </div>
         </div>
 
-        <!-- UNTERER PROJEKTBEREICH -->
         <div class="project-footer">
-
-          <!-- TECHNOLOGIEN -->
           <div class="project-technologies">
             @for (tech of technologies[currentIndex]; track tech.name) {
             <div class="technology">
@@ -76,7 +67,6 @@
             }
           </div>
 
-          <!-- BUTTONS -->
           <div class="place-btn">
             <div class="btn-gap">
 
@@ -121,7 +111,6 @@
       </div>
     </div>
 
-    <!-- NÄCHSTES PROJEKT -->
     <div class="pos-next-button">
       <button class="next-button" (click)="nextProject()" (mouseenter)="onNextEnter()" (mouseleave)="onNextLeave()">
         <span class="next-span">
