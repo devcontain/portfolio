@@ -1,98 +1,140 @@
 <div (click)="close()" class="preview">
   <div (click)="$event.stopPropagation()" class="cart-layer">
-    <div class="project-description">
-      <div class="project-headers">
-        @if (this.carts.setJoin === true) {
-        <h4>{{ languageService.join.cardnumber }}</h4>
-        <h1>{{ languageService.join.headercard }}</h1>
-        } @else if (this.carts.setElPolloLoco === true) {
-        <h4>{{ languageService.loco.cardnumber }}</h4>
-        <h1>{{ languageService.loco.headercard }}</h1>
-        } @else if (this.carts.setGlueck === true) {
-        <h4>{{ languageServiceCard.glueck.cardnumber }}</h4>
-        <h1>{{ languageServiceCard.glueck.headercard }}</h1>
-        } @else if (this.carts.setDevnext === true) {
-        <h4>{{ languageServiceCard.devnext.cardnumber }}</h4>
-        <h1>{{ languageServiceCard.devnext.headercard }}</h1>
-        } @else if (this.carts.setDeVault === true) {
-        <h4>{{ languageServiceCard.devault.cardnumber }}</h4>
-        <h1>{{ languageServiceCard.devault.headercard }}</h1>
-        }
-      </div>
 
-      <h2>{{ languageService.currentHeader.headercart }}</h2>
-
-      @if (this.carts.setJoin === true) {
-      <span>{{ languageService.join.descriptcard }}</span>
-      } @else if (this.carts.setElPolloLoco === true) {
-      <span>{{ languageService.loco.descriptcard }}</span>
-      } @else if (this.carts.setGlueck === true) {
-      <span>{{ languageServiceCard.glueck.descriptcard }}</span>
-      } @else if (this.carts.setDevnext === true) {
-      <span>{{ languageServiceCard.devnext.descriptcard }}</span>
-      } @else if (this.carts.setDeVault === true) {
-      <span>{{ languageServiceCard.devault.descriptcard }}</span>
-      }
-
-      <div>
-        @for (tech of technologies[currentIndex]; track tech.name) {
-        <div>
-          <img [class.svg-icon]="tech.img.endsWith('.svg')" [src]="tech.img" [alt]="tech.name">
-          <span class="cart-font-icon">{{ tech.name }}</span>
-        </div>
-        }
-      </div>
-
-      <div class="place-btn">
-        <div class="btn-gap">
-          <button [disabled]="this.carts.setDeVault" (mouseenter)="!this.carts.setDeVault && onArrowBtnEnter(0)"
-            (mouseleave)="!this.carts.setDeVault && onArrowBtnLeave(0)" (click)="goTo('github')">
-            <span class="btn-cart">GitHub</span>
-            <img class="btn-arrow" [src]="arrowBtnSrc(0)" alt="">
-          </button>
-
-          <button [disabled]="this.carts.setDeVault || this.carts.setDevnext"
-            (mouseenter)="!this.carts.setDeVault && !this.carts.setDevnext && onArrowBtnEnter(1)"
-            (mouseleave)="!this.carts.setDeVault && !this.carts.setDevnext && onArrowBtnLeave(1)"
-            (click)="goTo('live')">
-            <span class="btn-cart">{{ languageService.currentHeader.testbtncard }}</span>
-            <img class="btn-arrow" [src]="arrowBtnSrc(1)" alt="">
-          </button>
-        </div>
-      </div>
+    <!-- SCHLIESSEN -->
+    <div class="closes-wrap">
+      <img class="closes" [src]="closeIcon" (mouseenter)="onCloseEnter()" (mouseleave)="onCloseLeave()"
+        (click)="close()" alt="Close">
     </div>
 
-    <div>
-      <div class="cart-rightside-pos">
-        <div class="closes-wrap">
-          <img class="closes" [src]="closeIcon" (mouseenter)="onCloseEnter()" (mouseleave)="onCloseLeave()"
-            (click)="close()" alt="Close" />
-        </div>
-        <div class="cart-radius">
-          @if (this.carts.setJoin === true) {
-          <img class="cart-preview" [src]="img.joinPreviewCart" alt="Preview">
-          } @else if (this.carts.setElPolloLoco === true) {
-          <img class="cart-preview" [src]="img.polloPreviewCart" alt="Preview">
-          } @else if (this.carts.setGlueck === true) {
-          <img class="cart-preview" [src]="img.glueckPreviewCart" alt="Preview">
-          } @else if (this.carts.setDevnext === true) {
-          <img class="cart-preview" [src]="img.devnextPreviewCart" alt="Preview">
-          } @else if (this.carts.setDeVault === true) {
-          <img class="cart-preview grayscaled-picture" [src]="img.deVaultPreviewCart" alt="Preview">
+    <div class="cart-main">
+
+      <!-- LINKE SPALTE -->
+      <div class="project-left">
+
+        <!-- PROJEKTNUMMER -->
+        <div class="project-number">
+          @if (this.carts.setJoin) {
+          <h4>{{ languageService.join.cardnumber }}</h4>
+          } @else if (this.carts.setElPolloLoco) {
+          <h4>{{ languageService.loco.cardnumber }}</h4>
+          } @else if (this.carts.setGlueck) {
+          <h4>{{ languageServiceCard.glueck.cardnumber }}</h4>
+          } @else if (this.carts.setDevnext) {
+          <h4>{{ languageServiceCard.devnext.cardnumber }}</h4>
+          } @else if (this.carts.setDeVault) {
+          <h4>{{ languageServiceCard.devault.cardnumber }}</h4>
           }
         </div>
 
-        <div class="pos-next-button">
-          <button class="next-button" (click)="nextProject()" (mouseenter)="onNextEnter()" (mouseleave)="onNextLeave()">
-            <span class="next-span">{{ languageService.currentHeader.nextbtncard }}</span>
-            @if (showNextFirst) {
-            <img class="first" [src]="img.nextFirst" alt="arrow-right">
-            } @else {
-            <img class="second" [src]="img.nextSecond" alt="arrow-right">
+        <!-- PROJEKTINHALT -->
+        <div class="project-description">
+
+          <!-- ÜBERSCHRIFT -->
+          <div class="project-headers">
+            @if (this.carts.setJoin) {
+            <h1>{{ languageService.join.headercard }}</h1>
+            } @else if (this.carts.setElPolloLoco) {
+            <h1>{{ languageService.loco.headercard }}</h1>
+            } @else if (this.carts.setGlueck) {
+            <h1>{{ languageServiceCard.glueck.headercard }}</h1>
+            } @else if (this.carts.setDevnext) {
+            <h1>{{ languageServiceCard.devnext.headercard }}</h1>
+            } @else if (this.carts.setDeVault) {
+            <h1>{{ languageServiceCard.devault.headercard }}</h1>
             }
-          </button>
+          </div>
+
+          <!-- BESCHREIBUNG -->
+          <div class="project-info">
+            <h2>{{ languageService.currentHeader.headercart }}</h2>
+
+            @if (this.carts.setJoin) {
+            <span>{{ languageService.join.descriptcard }}</span>
+            } @else if (this.carts.setElPolloLoco) {
+            <span>{{ languageService.loco.descriptcard }}</span>
+            } @else if (this.carts.setGlueck) {
+            <span>{{ languageServiceCard.glueck.descriptcard }}</span>
+            } @else if (this.carts.setDevnext) {
+            <span>{{ languageServiceCard.devnext.descriptcard }}</span>
+            } @else if (this.carts.setDeVault) {
+            <span>{{ languageServiceCard.devault.descriptcard }}</span>
+            }
+          </div>
+        </div>
+
+        <!-- UNTERER PROJEKTBEREICH -->
+        <div class="project-footer">
+
+          <!-- TECHNOLOGIEN -->
+          <div class="project-technologies">
+            @for (tech of technologies[currentIndex]; track tech.name) {
+            <div class="technology">
+              <img [class.svg-icon]="tech.img.endsWith('.svg')" [src]="tech.img" [alt]="tech.name">
+              <span class="cart-font-icon">{{ tech.name }}</span>
+            </div>
+            }
+          </div>
+
+          <!-- BUTTONS -->
+          <div class="place-btn">
+            <div class="btn-gap">
+
+              <button [disabled]="this.carts.setDeVault" (mouseenter)="!this.carts.setDeVault && onArrowBtnEnter(0)"
+                (mouseleave)="!this.carts.setDeVault && onArrowBtnLeave(0)" (click)="goTo('github')">
+                <span class="btn-cart">GitHub</span>
+                <img class="btn-arrow" [src]="arrowBtnSrc(0)" alt="">
+              </button>
+
+              <button [disabled]="this.carts.setDeVault || this.carts.setDevnext"
+                (mouseenter)="!this.carts.setDeVault && !this.carts.setDevnext && onArrowBtnEnter(1)"
+                (mouseleave)="!this.carts.setDeVault && !this.carts.setDevnext && onArrowBtnLeave(1)"
+                (click)="goTo('live')">
+                <span class="btn-cart">
+                  {{ languageService.currentHeader.testbtncard }}
+                </span>
+                <img class="btn-arrow" [src]="arrowBtnSrc(1)" alt="">
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECHTE SPALTE -->
+      <div class="cart-rightside-pos">
+
+        <!-- PROJEKTBILD -->
+        <div class="cart-radius">
+          @if (this.carts.setJoin) {
+          <img class="cart-preview" [src]="img.joinPreviewCart" alt="Preview">
+          } @else if (this.carts.setElPolloLoco) {
+          <img class="cart-preview" [src]="img.polloPreviewCart" alt="Preview">
+          } @else if (this.carts.setGlueck) {
+          <img class="cart-preview" [src]="img.glueckPreviewCart" alt="Preview">
+          } @else if (this.carts.setDevnext) {
+          <img class="cart-preview" [src]="img.devnextPreviewCart" alt="Preview">
+          } @else if (this.carts.setDeVault) {
+          <img class="cart-preview grayscaled-picture" [src]="img.deVaultPreviewCart" alt="Preview">
+          }
         </div>
       </div>
     </div>
+
+    <!-- NÄCHSTES PROJEKT -->
+    <div class="pos-next-button">
+      <button class="next-button" (click)="nextProject()" (mouseenter)="onNextEnter()" (mouseleave)="onNextLeave()">
+        <span class="next-span">
+          {{ languageService.currentHeader.nextbtncard }}
+        </span>
+
+        @if (showNextFirst) {
+        <img class="first" [src]="img.nextFirst" alt="arrow-right">
+        } @else {
+        <img class="second" [src]="img.nextSecond" alt="arrow-right">
+        }
+      </button>
+    </div>
+
   </div>
 </div>

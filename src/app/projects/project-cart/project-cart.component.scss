@@ -1,139 +1,69 @@
 @use '../../scss_global/global.style' as *;
 
-:host.is-closing {
+:host {
+    display: contents;
+}
+
+:host.is-closing .preview {
     animation: fadeOut 150ms ease-in both;
 }
 
-:host {
+// MODAL HINTERGRUND
+.preview {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483647;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 16px;
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, 0.8);
     animation: fadeIn 220ms ease-out both;
 }
 
-.pos-next-button {
-    @include display(flex, null, end, column);
-    width: 100%;
-
-    >.next-button {
-        @include display(flex, center, end, column);
-        padding-bottom: 32px;
-        padding-top: 32px;
-        border: none;
-        width: 240px;
-
-        >.next-span {
-            position: absolute;
-            margin-right: 48px;
-            font-family: var(--ff-karla);
-            font-size: 18px;
-            color: $c-accent;
-            text-align: left;
-        }
-
-        img {
-            position: absolute;
-        }
-    }
-
-    >.next-button:hover .next-span {
-        color: $c-fg;
-    }
-}
-
+// MODAL
 .cart-layer {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 520px;
-    column-gap: 64px;
-    align-items: center;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
 
     width: 100%;
     max-width: 1250px;
-    padding: 32px 64px;
+    max-height: 90vh;
+    max-height: 90dvh;
+    overflow-y: auto;
+
+    padding: 48px 64px 40px;
     box-sizing: border-box;
 
     border-radius: 30px;
     border: 1px solid $c-accent;
-    background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+    background: linear-gradient(55.22deg,
+            #1C1C1C 36.26%,
+            #08463B 93.28%);
+
     font-family: var(--ff-karla);
     font-size: 18px;
     color: $c-fg;
-    position: relative;
+
     animation: cardPop 240ms cubic-bezier(.2, .8, .2, 1) both;
     transform-origin: 50% 60%;
-    will-change: transform, opacity;
 }
 
-.preview {
-    @include display(flex, center, center);
-    @include position(fixed, 2147483647, 100%, 100%);
-    background-color: rgba(0, 0, 0, 0.8);
-    inset: 0;
-    animation: backdropIn 200ms ease-out both;
-    will-change: opacity;
-    cursor: default;
-}
-
-.project-description {
-    @include display(flex, center, null, column);
-    gap: 16px;
-    /*     padding-left: 64px; */
-    padding-left: 0;
-    min-width: 0;
-
-    >.project-headers {
-        @include display(flex, start, start, column);
-        gap: 16px;
-
-        >h4 {
-            font-family: var(--ff-karla);
-            font-size: 128px;
-            line-height: 128px;
-            color: $c-accent;
-        }
-
-        >h1 {
-            font-family: var(--ff-fira);
-            font-size: 64px;
-            line-height: 64px;
-            color: $c-fg;
-        }
-    }
-
-    >h2 {
-        font-family: var(--ff-fira);
-        font-size: 24px;
-        line-height: 24px;
-        color: $c-accent;
-    }
-
-    >div {
-        @include display(flex, baseline, center);
-        gap: 16px;
-
-        >div {
-            display: flex;
-            gap: 16px;
-
-            >span {
-                display: flex;
-                align-items: center;
-            }
-        }
-    }
-
-    >.place-btn>.btn-gap {
-        gap: 16px;
-    }
-}
-
-.cart-rightside-pos {
-    @include display(flex, center, end, column);
-    padding-inline: 0;
-}
-
+// SCHLIESSEN
 .closes-wrap {
+    position: absolute;
+    top: 48px;
+    right: 64px;
+    z-index: 2;
+
     display: flex;
     justify-content: flex-end;
-    padding-top: 32px;
-    width: 100%;
 }
 
 .closes {
@@ -143,21 +73,142 @@
     cursor: pointer;
     transform-origin: center center;
     transition: transform 150ms ease;
+
+    &:hover {
+        transform: scale(1.35);
+    }
 }
 
-.closes:hover {
-    transform: scale(1.35);
+// HAUPTBEREICH
+.cart-main {
+    display: flex;
+    align-items: stretch;
+    gap: 64px;
+
+    width: 100%;
+    min-height: 510px;
+    flex-shrink: 0;
 }
 
-.cart-preview {
-    @include position(relative, null, 370px, 520px);
-    border-radius: 30px;
-    /*     object-fit: cover; */
+// LINKE SPALTE
+.project-left {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+    min-width: 0;
 }
 
-.cart-radius {
-    margin: 48px 0;
-    border-radius: 30px;
+// PROJEKTNUMMER
+.project-number {
+    margin-bottom: 6px;
+    flex-shrink: 0;
+
+    >h4 {
+        margin: 0;
+
+        font-family: var(--ff-karla);
+        font-size: 128px;
+        line-height: 128px;
+        color: $c-accent;
+    }
+}
+
+// ÜBERSCHRIFT UND BESCHREIBUNG
+.project-description {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.project-headers {
+    width: 100%;
+    min-width: 0;
+
+    >h1 {
+        margin-bottom: 12px;
+
+        font-family: var(--ff-fira);
+        font-size: 64px;
+        line-height: 64px;
+        color: $c-fg;
+        overflow-wrap: break-word;
+    }
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-width: 0;
+
+    >h2 {
+        margin-bottom: 12px;
+
+        font-family: var(--ff-fira);
+        font-size: 24px;
+        line-height: 28px;
+        color: $c-accent;
+    }
+
+    >span {
+        line-height: 1.3;
+    }
+}
+
+// UNTERER PROJEKTBEREICH
+.project-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin-top: auto;
+    padding-top: 32px;
+    min-width: 0;
+}
+
+// TECHNOLOGIEN
+.project-technologies {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    min-width: 0;
+}
+
+.technology {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    >img {
+        display: block;
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    >span {
+        line-height: 28px;
+    }
+}
+
+.cart-font-icon {
+    color: $c-fg;
+}
+
+// BUTTONS
+.place-btn {
+    display: flex;
+    align-items: center;
+}
+
+.btn-gap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .btn-arrow {
@@ -181,20 +232,76 @@ button:disabled {
     pointer-events: none;
 }
 
-.cart-font-icon {
-    color: $c-fg;
+// RECHTE SPALTE
+.cart-rightside-pos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 520px;
+    min-width: 0;
 }
 
-.svg-icon {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
+.cart-radius {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.cart-preview {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 520 / 370;
+
+    object-fit: cover;
+    border-radius: 30px;
 }
 
 .grayscaled-picture {
     filter: grayscale(100%);
 }
 
+// NÄCHSTES PROJEKT
+.pos-next-button {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+    margin-top: 32px;
+}
+
+.next-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    width: 100%;
+
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+
+    >.next-span {
+        font-family: var(--ff-karla);
+        font-size: 18px;
+        color: $c-accent;
+        white-space: nowrap;
+    }
+
+    >img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+
+    &:hover .next-span {
+        color: $c-fg;
+    }
+}
+
+// ANIMATIONEN
 @keyframes backdropIn {
     from {
         opacity: 0;
@@ -215,10 +322,6 @@ button:disabled {
     from {
         opacity: 0;
     }
-
-    to {
-        opacity: 1;
-    }
 }
 
 @keyframes cardPop {
@@ -233,154 +336,187 @@ button:disabled {
     }
 }
 
-@include respond(1300px) {
+// RESPONSIVE BIS 1100PX
+@include respond(1100px) {
     .cart-layer {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: flex-start;
-        width: unset;
+        max-width: 650px;
+        padding: 48px 48px 40px;
     }
 
-    .project-description {
-        justify-content: start;
-        width: 518px;
-        height: 500px;
-
-        >div {
-            width: 518px;
-            flex-wrap: wrap;
-        }
-
-        >.project-headers {
-            padding-top: 14px;
-
-            >h4 {
-                font-size: 80px;
-                line-height: 80px;
-            }
-
-            >h1 {
-                font-size: 64px;
-                line-height: 64px;
-            }
-        }
-    }
-
-    .cart-preview {
-        height: 288px;
-    }
-
-    .cart-layer {
-        flex-direction: column-reverse;
-        align-items: start;
+    .cart-main {
+        flex-direction: column;
+        gap: 40px;
+        min-height: 0;
     }
 
     .cart-rightside-pos {
-        padding-inline: 64px;
+        order: -1;
+        flex: 0 0 auto;
+        width: 100%;
     }
 
     .cart-radius {
-        margin: 32px 0 0;
+        max-width: 520px;
     }
 
-    .next-button {
-        position: absolute;
-        top: 794px;
+    .project-left {
+        width: 100%;
+    }
+
+    .project-number {
+        >h4 {
+            font-size: 80px;
+            line-height: 80px;
+        }
+    }
+
+    .project-headers {
+        >h1 {
+            font-size: 64px;
+            line-height: 64px;
+        }
+    }
+
+    .closes-wrap {
+        top: 24px;
+        right: 32px;
     }
 }
 
-@include respond(800px) {
-    .project-description {
-        padding-left: 32px;
-    }
-
-    .cart-rightside-pos {
-        padding-inline: 32px;
-    }
-}
-
+// RESPONSIVE BIS 675PX
 @include respond(675px) {
-    .cart-preview {
-        height: 268px;
-        width: 384px;
+    .cart-layer {
+        padding: 48px 24px 32px;
+        border-radius: 24px;
     }
 
-    .project-description {
-        width: 384px;
+    .cart-main {
+        gap: 32px;
+    }
 
-        >.project-headers {
-            padding-top: 6px;
-            width: 384px;
-            gap: 0px;
+    .project-number {
+        margin-bottom: 32px;
 
-            >h4 {
-                font-size: 48px;
-                line-height: 58px;
-            }
-
-            >h1 {
-                font-size: 42px;
-                line-height: 52px;
-            }
-        }
-
-        >div {
-            width: 384px;
-        }
-
-        >.place-btn {
-            padding-top: 18px;
-            justify-content: center;
+        >h4 {
+            font-size: 64px;
+            line-height: 64px;
         }
     }
 
-    .next-button {
-        top: 786px;
+    .project-headers {
+        >h1 {
+            font-size: 42px;
+            line-height: 52px;
+        }
+    }
+
+    .project-info {
+        >h2 {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+
+    .project-footer {
+        padding-top: 32px;
+    }
+
+    .project-technologies {
+        gap: 12px;
+    }
+
+    .technology {
+        gap: 8px;
+    }
+
+    .pos-next-button {
+        margin-top: 32px;
     }
 }
 
+// RESPONSIVE BIS 540PX
 @include respond(540px) {
-    .cart-preview {
-        height: 188px;
-        width: 284px;
+    .preview {
+        padding: 8px;
     }
 
-    .project-description {
-        justify-content: start;
-        width: 284px;
-        padding-left: 16px;
-        gap: 4px;
-        height: 470px;
+    .cart-layer {
+        max-height: calc(100dvh - 16px);
+        padding: 48px 16px 24px;
+        border-radius: 20px;
+    }
 
+    .cart-main {
+        gap: 24px;
+    }
+
+    .closes-wrap {
+        top: 16px;
+        right: 16px;
+    }
+
+    .project-number {
+        margin-bottom: 32px;
+
+        >h4 {
+            font-size: 48px;
+            line-height: 58px;
+        }
+    }
+
+    .project-headers {
+        >h1 {
+            font-size: 36px;
+            line-height: 44px;
+        }
+    }
+
+    .project-info {
         >h2 {
             font-size: 16px;
-            line-height: 18px;
+            line-height: 20px;
         }
 
-        >div {
-            width: 284px;
-            flex-wrap: wrap;
-        }
-
-        >.place-btn>.btn-gap {
-            gap: 12px;
+        >span {
+            font-size: 16px;
         }
     }
 
-    .next-button {
-        top: 678px;
+    .project-footer {
+        gap: 16px;
+        padding-top: 32px;
     }
 
-    .cart-rightside-pos {
-        padding-inline: 16px;
+    .project-technologies {
+        gap: 12px;
     }
 
-    button {
+    .technology {
+        gap: 8px;
+        font-size: 14px;
+
+        >img {
+            width: 28px;
+            height: 28px;
+        }
+
+        >span {
+            line-height: 28px;
+        }
+    }
+
+    .btn-gap {
+        gap: 12px;
+    }
+
+    .place-btn button {
         width: 132px;
         height: 42px;
     }
 
-    .cart-layer {
-        scale: 0.84;
+    .next-button {
+        >.next-span {
+            font-size: 16px;
+        }
     }
 }
