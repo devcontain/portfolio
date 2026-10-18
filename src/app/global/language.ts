@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 
 export class Language {
 
-    private readonly STORAGE_KEY = 'langToggle'; 
+    private readonly STORAGE_KEY = 'langToggle';
     private readonly isBrowser: boolean;
 
     private _toggleValue = new BehaviorSubject<string>('false');
@@ -40,46 +40,47 @@ export class Language {
         try { localStorage.setItem(key, value); } catch { }
     }
 
+
     public english = {
-        navleft: 'About me',
+        navleft: 'About Me',
         navmid: 'Skills',
         navright: 'Projects',
 
-        buttonleft: 'check my work',
-        buttonright: 'contact me',
+        buttonleft: 'View My Work',
+        buttonright: 'Contact Me',
         bannertxta: 'Frontend Developer',
         bannertxtb: 'Based in Hannover',
-        bannertxtc: 'Open to work',
-        bannertxtd: 'Available to work',
+        bannertxtc: 'Open to new Opportunities',
+        bannertxtd: 'Available for new Projects',
 
         abouta: 'Who I Am',
-        aboutb: 'About me',
-        aboutc: 'My name is Sebastian. I am technically adept and take a consistently solution-oriented approach – complex challenges and well-designed applications motivate me. Modern technologies and the opportunity for continuous development are what drive me.',
-        aboutd: 'Flexible in terms of working environments, I can work effectivley both on-site remotely.',
-        aboute: 'I am open-minded and always looking for personal challanges to constantly improve my knowledge and skills.',
-        aboutf: 'In my profession, programming isn\'t just about writing code it\'s creative form of problem-solving. I take pride in my ability to distill complex technical challanges into simple, user-friendly solutions. This way, I help you achieve your goals and bring your visions to life.',
+        aboutb: 'About Me',
+        aboutc: 'My name is Sebastian. I am technically skilled and consistently take a solution-oriented approach. Complex challenges and well-designed applications motivate me. Modern technologies and the opportunity to continuously develop my skills drive me forward.',
+        aboutd: 'I am flexible when it comes to my working environment and can work effectively both on-site and remotely.',
+        aboute: 'I am open-minded and always looking for new challenges to further develop my knowledge and skills.',
+        aboutf: 'For me, programming is not just about writing code. It is a creative form of problem-solving. My strength lies in turning complex technical challenges into simple, user-friendly solutions. This allows me to help you achieve your goals and bring your ideas to life.',
 
         skillsa: 'Technologies',
         skillsb: 'Skill Set',
-        skillsc: 'My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. I am open to empracing new technologies and methodolohies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web develepment.',
-        skillsd: 'You need',
-        skillse: 'another skill',
-        skillsf: 'Feel free to contact me. I look forward to expanding on my previous knowledge',
-        skillsbutton: 'Lets Talk',
+        skillsc: 'Throughout my journey, I have worked on a variety of projects, using different frontend technologies and concepts. I am open to exploring new technologies and methods to continuously expand my skills and keep up with developments in web technology.',
+        skillsd: 'Looking for',
+        skillse: 'a specific skill?',
+        skillsf: 'Feel free to contact me. I look forward to expanding my knowledge and taking on new challenges.',
+        skillsbutton: "Let's Talk",
 
         projectsa: 'Featured Projects',
-        projectsb: 'Explore a selection of my work here - Interact with projects to see my skills in action.',
+        projectsb: 'Discover a selection of my work. Explore the projects and see my skills in action.',
 
-        headercart: 'What is this project about?',
-        testbtncard: 'Life test',
-        nextbtncard: 'Next project',
+        headercart: 'What Is This Project About?',
+        testbtncard: 'Live Demo',
+        nextbtncard: 'Next Project',
 
-        headerrevaluation: 'What my colleagues say about me',
+        headerrevaluation: 'What My Colleagues Say About Me',
 
         footerunderlogoa: 'Web Developer',
-        footerunderlogob: 'Hannover Germany',
-        footerdat: 'Legal Notice',
-        footerimp: 'Imprint'
+        footerunderlogob: 'Hannover, Germany',
+        footerdat: 'Privacy Policy',
+        footerimp: 'Legal Notice'
     };
 
     public german = {
@@ -89,37 +90,37 @@ export class Language {
 
         buttonleft: 'Arbeiten',
         buttonright: 'Kontakt',
-        bannertxta: 'Frontend Entwickler',
-        bannertxtb: 'Sitz in Hannover',
-        bannertxtc: 'Offen für Arbeit',
-        bannertxtd: 'Für die Arbeit verfügbar',
+        bannertxta: 'Frontend-Entwickler',
+        bannertxtb: 'Standort Hannover',
+        bannertxtc: 'Offen für neue Herausforderungen',
+        bannertxtd: 'Verfügbar für neue Projekte',
 
         abouta: 'Wer ich bin',
         aboutb: 'Über mich',
-        aboutc: 'Mein Name ist Sebastian, ich bin technisch versiert und arbeite konsequent lösungsorientiert – komplexe Aufgaben und gut durchdachte Anwendungen motivieren mich. Moderne Technologien und die Möglichkeit, mich kontinuierlich weiterzuentwickeln, treiben mich an.',
-        aboutd: 'Ich bin flexibel, was die Arbeitsumgebung angeht, und kann sowohl vor Ort als auch aus der Ferne effektiv arbeiten.',
-        aboute: 'Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um meine Kenntnisse und Fähigkeiten weiterzuentwickeln.',
-        aboutf: 'In meinem Beruf geht es beim Programmieren nicht nur darum Code zu schreiben; es ist eine kreative Form des Problemlösens. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen zu verwandeln. Auf diese Weise helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken.',
+        aboutc: 'Mein Name ist Sebastian. Ich bin technisch versiert und arbeite konsequent lösungsorientiert. Komplexe Aufgaben und durchdachte Anwendungen motivieren mich. Moderne Technologien und die Möglichkeit, mich kontinuierlich weiterzuentwickeln, treiben mich an.',
+        aboutd: 'Ich bin flexibel in der Wahl meiner Arbeitsumgebung und kann sowohl vor Ort als auch im Homeoffice effektiv arbeiten.',
+        aboute: 'Ich bin aufgeschlossen und suche stets nach neuen Herausforderungen, um meine Kenntnisse und Fähigkeiten weiterzuentwickeln.',
+        aboutf: 'Beim Programmieren geht es für mich nicht nur darum, Code zu schreiben. Es ist eine kreative Form der Problemlösung. Meine Stärke liegt darin, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen zu verwandeln. So unterstütze ich Sie dabei, Ihre Ziele zu erreichen und Ihre Ideen Wirklichkeit werden zu lassen.',
 
         skillsa: 'Technologien',
         skillsb: 'Skills',
-        skillsc: 'Auf meinem bisherigen Weg habe ich an vielfältigen Projekten gearbeitet und dabei ein breites Spektrum an Frontend-Technologien und -Konzepten eingesetzt. Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu erweitern und in der sich ständig weiterentwickelnden Welt der Webentwicklung stets einen Schritt voraus zu sein.',
-        skillsd: 'Sie brauchen',
-        skillse: 'einen Skill',
-        skillsf: 'Nehmen Sie Kontakt mit mir auf. Ich freue mich darauf mein bisheriges Wissen zu erweitern',
+        skillsc: 'Auf meinem bisherigen Weg habe ich an vielfältigen Projekten gearbeitet und dabei verschiedene Frontend-Technologien und -Konzepte eingesetzt. Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu erweitern und mit den Entwicklungen der Webtechnologie Schritt zu halten.',
+        skillsd: 'Sie benötigen',
+        skillse: 'eine bestimmte Fähigkeit?',
+        skillsf: 'Nehmen Sie Kontakt mit mir auf. Ich freue mich darauf, mein Wissen zu erweitern und neue Herausforderungen anzunehmen.',
         skillsbutton: 'Kontakt',
 
         projectsa: 'Projekte',
-        projectsb: 'Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen.',
+        projectsb: 'Entdecken Sie eine Auswahl meiner Arbeiten. Erkunden Sie die Projekte und erleben Sie meine Fähigkeiten in der Praxis.',
 
-        headercart: 'Um was geht es bei diesem Projekt?',
+        headercart: 'Worum geht es bei diesem Projekt?',
         testbtncard: 'Testen',
         nextbtncard: 'Nächstes Projekt',
 
         headerrevaluation: 'Was meine Kollegen über mich sagen',
 
-        footerunderlogoa: 'Web-Entwickler',
-        footerunderlogob: 'Hannover Deutschland',
+        footerunderlogoa: 'Webentwickler',
+        footerunderlogob: 'Hannover, Deutschland',
         footerdat: 'Datenschutz',
         footerimp: 'Impressum'
     };

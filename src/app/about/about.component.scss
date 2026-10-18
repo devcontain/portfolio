@@ -110,6 +110,9 @@ span.hover-text:hover {
 
 @include respond(1450px) {
     #aboutme {
+        padding-top: 64px;
+        padding-bottom: 64px;
+        
         >div.placed {
             flex-direction: column;
             height: 1812px;
