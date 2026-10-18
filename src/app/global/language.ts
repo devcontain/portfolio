@@ -126,9 +126,9 @@ export class Language {
     };
 
     public retxtenglish = [
-        { text: "Sebastian keeps calm under stress and always finds a solution.", name: "Burkhard, Mechatroniker" },
-        { text: "He gladly shares his knowledge and helps new colleagues settle in.", name: "Tobias, Office worker" },
-        { text: "He thinks solution-oriented and brings ideas that move us forward.", name: "Nicol, Team Lead" }
+        { text: "Sebastian stays calm under pressure and always finds solutions.", name: "Burkhard, Mechatronics Technician" },
+        { text: "He gladly shares his knowledge and helps new colleagues settle in.", name: "Tobias, Administrative Assistant" },
+        { text: "He focuses on solutions and contributes ideas that move us forward.", name: "Nicol, Team Lead" }
     ];
 
     public retxtgerman = [
@@ -141,92 +141,57 @@ export class Language {
         headeroverbox: 'Contact me',
         headbefore: 'Let’s work',
         headafter: 'together',
-        underhead: 'Got a problem to solve',
+        underhead: 'Got a problem to solve?',
         descriptbefore: 'I enjoy turning ideas into results and I’m always curious about new challenges. If you’re looking for someone who brings energy, focus, and reliable value to your projects, I’d be happy to connect.',
-        descriptafter: 'your ideas and contributing to your projects with my work.',
-        question: 'Need a Frontend developer?',
+        descriptafter: '',
+        question: 'Need a frontend developer?',
         reply: 'Let’s talk!',
 
-        name: 'What s your name?',
+        name: 'What’s your name?',
         mynameis: 'Your name goes here',
-        missingname: 'Oops! it seems your name is missing',
-        email: 'What s your email?',
+        missingname: 'Oops! It seems your name is missing.',
+        email: 'What’s your email address?',
         mymailis: 'yourmail@email.com',
-        missingmail: 'Hoppla! your email is required',
+        missingmail: 'Oops! Your email address is required.',
         message: 'How can I help you?',
         mymassageis: 'Hello Sebastian, I am interested in ...',
-        missingmassage: 'What do you need to develop?',
+        missingmassage: 'Please enter your message.',
 
         policytxtbefore: 'I’ve read the',
         policyicealink: 'privacy policy',
-        policyafter: 'and agree to the processing of my data as outlined.',
-        missingpolicy: 'Please accept the privacy policy',
+        policyafter: 'and agree to the processing of my data as described.',
+        missingpolicy: 'Please accept the privacy policy.',
 
-        button: 'send'
+        button: 'Send'
     };
 
     public contacttxtgerman = {
         headeroverbox: 'Kontaktieren Sie mich',
-        headbefore: 'Lassen Sie uns ein',
-        headafter: 'Netzwerk bilden',
-        underhead: 'Sie haben ein Problem zu lösen',
+        headbefore: 'Lassen Sie uns',
+        headafter: 'zusammenarbeiten',
+        underhead: 'Haben Sie ein Problem zu lösen?',
         descriptbefore: 'Ich habe Freude daran, Ideen in Ergebnisse zu verwandeln und bin immer neugierig auf neue Herausforderungen. Wenn Sie jemanden suchen, der Energie, Fokus und verlässlichen Mehrwert in Ihre Projekte bringt, freue ich mich auf den Austausch.',
+        descriptafter: '',
         question: 'Brauchen Sie einen Frontend-Entwickler?',
-        reply: 'Lassen Sie uns reden!',
+        reply: 'Lassen Sie uns sprechen!',
 
         name: 'Wie ist Ihr Name?',
-        mynameis: 'Dein Name kommt hier hin',
-        missingname: 'Ups! Ihr Name scheint zu fehlen',
-        email: 'Wie lautet Ihre E-Mail?',
+        mynameis: 'Ihr Name kommt hier hin',
+        missingname: 'Ups! Ihr Name scheint zu fehlen.',
+        email: 'Wie lautet Ihre E-Mail-Adresse?',
         mymailis: 'ihremail@email.de',
-        missingmail: 'Hoppla! Ihre E-Mail ist erforderlich',
+        missingmail: 'Hoppla! Ihre E-Mail-Adresse fehlt.',
         message: 'Wie kann ich Ihnen helfen?',
-        mymassageis: 'Hallo Sebastian, ich bin interessiert an ...',
-        missingmassage: 'Was soll Programmiert werden?',
+        mymassageis: 'Hallo Sebastian, ich interessiere mich für ...',
+        missingmassage: 'Bitte geben Sie eine Nachricht ein.',
 
         policytxtbefore: 'Ich habe die',
-        policyicealink: 'Datenschutzbestimmungen',
+        policyicealink: 'Datenschutzerklärung',
         policyafter: 'gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.',
-        missingpolicy: 'Bitte akzeptieren Sie die Datenschutzbestimmungen',
+        missingpolicy: 'Bitte akzeptieren Sie die Datenschutzerklärung.',
 
         button: 'Absenden'
     };
-
-    public joinenglish = {
-        cardnumber: '01',
-        headercard: 'Join',
-        descriptcard: 'Task manager inspired by the Kanba System. Create and organize tasks using drag and drop functions, assign users and categories.'
-    }
-
-    public joingerman = {
-        cardnumber: '01',
-        headercard: 'Join',
-        descriptcard: 'Aufgabenmanager nach dem Vorbild des Kanba-Systems. Erstellen und organisieren Sie Aufgaben mit Hilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.'
-    }
-
-    public locoenglish = {
-        cardnumber: '02',
-        headercard: 'EL Pollo Loco',
-        descriptcard: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.'
-    }
-
-    public locogerman = {
-        cardnumber: '02',
-        headercard: 'EL Pollo Loco',
-        descriptcard: 'Aufgabenmanager nach dem Vorbild des Kanba-Systems. Erstellen und organisieren Sie Aufgaben mit Hilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.'
-    }
-
-    public bubbleenglish = {
-        cardnumber: '03',
-        headercard: 'Da Bubble',
-        descriptcard: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.'
-    }
-
-    public bubblegerman = {
-        cardnumber: '03',
-        headercard: 'Da Bubble',
-        descriptcard: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.'
-    }
 
     get currentHeader(): any {
         return this.toggleValue === 'false' ? this.english : this.german;
@@ -238,17 +203,5 @@ export class Language {
 
     get contact(): any {
         return this.toggleValue === 'false' ? this.contacttxtenglish : this.contacttxtgerman;
-    }
-
-    get join(): any {
-        return this.toggleValue === 'false' ? this.joinenglish : this.joingerman;
-    }
-
-    get loco(): any {
-        return this.toggleValue === 'false' ? this.locoenglish : this.locogerman;
-    }
-
-    get bubble(): any {
-        return this.toggleValue === 'false' ? this.bubbleenglish : this.bubblegerman;
     }
 }

@@ -41,40 +41,73 @@ export class LanguageCards {
     }
 
 
+    public joinenglish = {
+        cardnumber: '01',
+        headercard: 'Join',
+        descriptcard: 'A Kanban-based task management application. Create, organize and assign tasks, manage contacts and track progress using drag and drop.'
+    }
+
+    public joingerman = {
+        cardnumber: '01',
+        headercard: 'Join',
+        descriptcard: 'Eine Aufgabenverwaltung nach dem Kanban-Prinzip. Erstellen, organisieren und verteilen Sie Aufgaben, verwalten Sie Kontakte und verfolgen Sie den Fortschritt per Drag-and-Drop.'
+    }
+
+    public locoenglish = {
+        cardnumber: '02',
+        headercard: 'El Pollo Loco',
+        descriptcard: 'An object-oriented 2D platform game. Help Pepe collect coins and Tabasco bottles, avoid enemies and defeat the final boss.'
+    }
+
+    public locogerman = {
+        cardnumber: '02',
+        headercard: 'El Pollo Loco',
+        descriptcard: 'Ein objektorientiertes 2D-Jump-and-Run-Spiel. Helfen Sie Pepe, Münzen und Tabasco-Flaschen zu sammeln, Gegnern auszuweichen und den Endgegner zu besiegen.'
+    }
+
     public glueckenglish = {
         cardnumber: '03',
         headercard: 'Glück Selbermachen',
-        descriptcard: 'Hosted and live internet site.'
+        descriptcard: 'A fully developed and deployed Angular website with responsive design, hosted online and accessible to visitors.'
     }
 
     public glueckgerman = {
         cardnumber: '03',
         headercard: 'Glück Selbermachen',
-        descriptcard: 'Gehosted and live Internetseite.'
+        descriptcard: 'Eine vollständig entwickelte und veröffentlichte Angular-Website mit responsivem Design, eigenem Hosting und öffentlicher Erreichbarkeit.'
     }
 
     public devnextenglish = {
         cardnumber: '04',
         headercard: 'devnext',
-        descriptcard: 'Docker, CI/CD and security.'
+        descriptcard: 'A DevOps project featuring Docker, automated CI/CD pipelines, server deployment, monitoring and security.'
     }
 
     public devnextgerman = {
         cardnumber: '04',
         headercard: 'devnext',
-        descriptcard: 'Docker, CI/CD und Sicherheit'
+        descriptcard: 'Ein DevOps-Projekt mit Docker, automatisierten CI/CD-Pipelines, Server-Deployment, Monitoring und Sicherheitsmaßnahmen.'
     }
 
     public devaultenglish = {
         cardnumber: '05',
         headercard: 'devnext Vault',
-        descriptcard: 'Centralized structure for storing all projects on the home server, allowing the PC to serve exclusively as a workstation.'
+        descriptcard: 'A planned centralized project storage solution on a home server, separating development workstations from persistent project storage.'
     }
 
     public devaultgerman = {
         cardnumber: '05',
         headercard: 'devnext Vault',
-        descriptcard: 'Zentrale Struktur zur Speicherung aller Projekte auf dem Home Server, sodass der PC ausschließlich als Arbeitsstation dient.'
+        descriptcard: 'Eine geplante zentrale Projektverwaltung auf dem Homeserver, die Entwicklungsarbeitsplätze von der dauerhaften Speicherung der Projektdaten trennt.'
+    }
+
+
+    get join(): any {
+        return this.toggleValue === 'false' ? this.joinenglish : this.joingerman;
+    }
+
+    get loco(): any {
+        return this.toggleValue === 'false' ? this.locoenglish : this.locogerman;
     }
 
     get glueck(): any {

@@ -12,9 +12,9 @@
 
         <div class="project-number">
           @if (this.carts.setJoin) {
-          <h4>{{ languageService.join.cardnumber }}</h4>
+          <h4>{{ languageServiceCard.join.cardnumber }}</h4>
           } @else if (this.carts.setElPolloLoco) {
-          <h4>{{ languageService.loco.cardnumber }}</h4>
+          <h4>{{ languageServiceCard.loco.cardnumber }}</h4>
           } @else if (this.carts.setGlueck) {
           <h4>{{ languageServiceCard.glueck.cardnumber }}</h4>
           } @else if (this.carts.setDevnext) {
@@ -28,9 +28,9 @@
 
           <div class="project-headers">
             @if (this.carts.setJoin) {
-            <h1>{{ languageService.join.headercard }}</h1>
+            <h1>{{ languageServiceCard.join.headercard }}</h1>
             } @else if (this.carts.setElPolloLoco) {
-            <h1>{{ languageService.loco.headercard }}</h1>
+            <h1>{{ languageServiceCard.loco.headercard }}</h1>
             } @else if (this.carts.setGlueck) {
             <h1>{{ languageServiceCard.glueck.headercard }}</h1>
             } @else if (this.carts.setDevnext) {
@@ -44,9 +44,9 @@
             <h2>{{ languageService.currentHeader.headercart }}</h2>
 
             @if (this.carts.setJoin) {
-            <span>{{ languageService.join.descriptcard }}</span>
+            <span>{{ languageServiceCard.join.descriptcard }}</span>
             } @else if (this.carts.setElPolloLoco) {
-            <span>{{ languageService.loco.descriptcard }}</span>
+            <span>{{ languageServiceCard.loco.descriptcard }}</span>
             } @else if (this.carts.setGlueck) {
             <span>{{ languageServiceCard.glueck.descriptcard }}</span>
             } @else if (this.carts.setDevnext) {
