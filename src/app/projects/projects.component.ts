@@ -19,7 +19,7 @@ export class ProjectsComponent implements OnInit {
   polloLocoPreview = '../../assets/img/pollo-locoPreview.png';
   glueckPreview = '../../assets/img/glueck.png';
   devnextPreview = '../../assets/img/devnext.png';
-  deVaultPreview = '../../assets/img/racoon_CSM.png';
+  deVaultPreview = '../../assets/img/deVault.png';
 
   singleProjectBackground = '../../assets/img/single-project-back-ground.png';
 

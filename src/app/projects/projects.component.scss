@@ -28,6 +28,8 @@ section {
     >div {
         @include display(flex, center, null, column);
         width: 880px;
+        max-width: 100%;
+        min-width: 0;
         height: 100%;
 
         .portfolio-header {
@@ -53,6 +55,7 @@ section {
 
             span {
                 @include position(null, null, 44px, 456px);
+                max-width: 100%;
                 padding-bottom: 32px;
                 font-family: var(--ff-karla);
                 font-size: 18px;
@@ -60,14 +63,20 @@ section {
         }
 
         .projects {
+            width: 100%;
+            min-width: 0;
+
             .single-project {
                 @include display(flex, center, center, column);
                 @include position(null, null, 109px, 100%);
+                min-width: 0;
                 transition: background-color 0.3s ease, transform 0.3s ease;
 
                 .place-single-project {
                     @include display(flex, space-between, center, row);
                     width: 800px;
+                    max-width: 100%;
+                    min-width: 0;
 
                     >div:first-child img {
                         padding-left: 6px;
@@ -76,6 +85,7 @@ section {
                     h3 {
                         font-family: var(--ff-fira);
                         font-size: 24px;
+                        overflow-wrap: anywhere;
                     }
 
                     span {
@@ -86,10 +96,24 @@ section {
                     >div {
                         @include display(flex, center, center, row);
                         gap: 4px;
+                        min-width: 0;
+                    }
+
+                    >div:last-child {
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        align-items: center;
+                        min-width: 0;
+                        row-gap: 8px;
                     }
 
                     .project-status {
                         @include display(flex, center, center, row);
+                        min-width: 0;
+
+                        span:last-child {
+                            overflow-wrap: break-word;
+                        }
 
                         .status-icon {
                             display: block;
@@ -172,7 +196,6 @@ section {
 
 img.pre,
 img.back {
-    object-fit: cover;
     border-radius: 30px;
     transition: transform .4s ease, opacity .4s ease, filter .4s ease, box-shadow .4s ease;
     will-change: transform, opacity;
@@ -362,19 +385,42 @@ img.back {
 @include respond(490px) {
     section {
         >div {
-            width: 280px;
+            width: calc(100% - 40px);
+            min-width: 0;
 
-            >div.portfolio-header>span {
-                width: 280px;
+            >div.portfolio-header {
+                width: 100%;
+
+                h1 {
+                    max-width: 100%;
+                    overflow-wrap: anywhere;
+                }
+
+                >span {
+                    width: 100%;
+                    height: auto;
+                }
             }
 
             #{$psp} {
-                width: 280px;
+                width: 100%;
+                min-width: 0;
+
+                >div:last-child {
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    column-gap: 12px;
+                    row-gap: 8px;
+                }
 
                 span {
                     font-size: 16px;
                 }
             }
         }
+    }
+
+    .short-line {
+        display: none;
     }
 }

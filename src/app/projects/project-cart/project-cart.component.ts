@@ -53,10 +53,9 @@ export class ProjectCartComponent implements OnInit {
   public technologies = [
     // 0 - JOIN
     [
-      { name: 'CSS', img: this.img.scssCart },
-      { name: 'HTML', img: this.img.htmlCart },
-      { name: 'Angular', img: this.img.angularCart },
-      { name: 'TypeScript', img: this.img.typeScriptCart }
+      { name: 'javaScript', img: this.img.javaScriptCart },
+      { name: 'Firebase', img: this.img.firebaseCart },
+      { name: 'Angular', img: this.img.angularCart }
     ],
 
     // 1 - El Pollo Loco
@@ -68,8 +67,6 @@ export class ProjectCartComponent implements OnInit {
 
     // 2 - Glück-Selbermachen
     [
-      { name: 'HTML', img: this.img.htmlCart },
-      { name: 'CSS', img: this.img.scssCart },
       { name: 'Angular', img: this.img.angularCart },
       { name: 'TypeScript', img: this.img.typeScriptCart }
     ],
