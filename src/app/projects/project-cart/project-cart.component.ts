@@ -103,7 +103,7 @@ export class ProjectCartComponent implements OnInit {
   private readonly links: Record<CartKey, Record<LinkKind, string | null>> = {
     setJoin: {
       github: 'https://github.com/Simon-Kral/join',
-      live: 'https://devcontain.de/join/'
+      live: 'https://join.devcontain.de'
     },
 
     setElPolloLoco: {
