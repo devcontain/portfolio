@@ -49,7 +49,7 @@ export class LanguageLaw {
         s5City: '67663 Kaiserslautern',
         s5Country: 'Deutschland',
         s5PhoneLabel: 'Telefon:',
-        s5Phone: '0173-4540375',
+        s5Phone: '+49160 97596360',
         s5Email: 'contact@devcontain.de',
         s5ControllerText: 'Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.',
 
@@ -126,7 +126,7 @@ export class LanguageLaw {
         s5City: '67663 Kaiserslautern',
         s5Country: 'Germany',
         s5PhoneLabel: 'Phone:',
-        s5Phone: '0173-4540375',
+        s5Phone: '+49160 97596360',
         s5Email: 'contact@devcontain.de',
         s5ControllerText: 'The controller is the natural or legal person who, alone or jointly with others, determines the purposes and means of the processing of personal data (e.g. names, e-mail addresses, etc.).',
 
@@ -185,7 +185,7 @@ export class LanguageLaw {
 
         contactLabel: 'Kontakt:',
         phoneLabel: 'Telefon:',
-        phone: '0173-4540375',
+        phone: '+49160 97596360',
         emailLabel: 'E-Mail:',
         emailText: 'contact@devcontain.de',
 
@@ -229,7 +229,7 @@ export class LanguageLaw {
 
         contactLabel: 'Contact:',
         phoneLabel: 'Phone:',
-        phone: '0173-4540375',
+        phone: '+49160 97596360',
         emailLabel: 'Email:',
         emailText: 'contact@devcontain.de',
 
